@@ -25,6 +25,14 @@
 		B3ED63F825FDF5300028E5F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C225FDF4E80028E5F6 /* Assets.xcassets */; };
 		B3ED643C25FDF94E0028E5F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3ED643B25FDF94E0028E5F6 /* GoogleService-Info.plist */; };
 		B3ED644225FDF9580028E5F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3ED644125FDF9580028E5F6 /* GoogleService-Info.plist */; };
+		B3ED644C25FDFBD70028E5F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED644B25FDFBD70028E5F6 /* User.swift */; };
+		B3ED644D25FDFBD70028E5F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED644B25FDFBD70028E5F6 /* User.swift */; };
+		B3ED645725FDFD4E0028E5F6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED645625FDFD4E0028E5F6 /* Post.swift */; };
+		B3ED645825FDFD4E0028E5F6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED645625FDFD4E0028E5F6 /* Post.swift */; };
+		B3ED645F25FDFDF90028E5F6 /* User+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED645E25FDFDF90028E5F6 /* User+Firebase.swift */; };
+		B3ED646025FDFDF90028E5F6 /* User+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED645E25FDFDF90028E5F6 /* User+Firebase.swift */; };
+		B3ED646625FDFEB40028E5F6 /* Post+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED646525FDFEB40028E5F6 /* Post+Firebase.swift */; };
+		B3ED646725FDFEB40028E5F6 /* Post+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED646525FDFEB40028E5F6 /* Post+Firebase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +74,10 @@
 		B3ED63FC25FDF5300028E5F6 /* SocialLite_Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLite_Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED643B25FDF94E0028E5F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3ED644125FDF9580028E5F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3ED644B25FDFBD70028E5F6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B3ED645625FDFD4E0028E5F6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B3ED645E25FDFDF90028E5F6 /* User+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Firebase.swift"; sourceTree = "<group>"; };
+		B3ED646525FDFEB40028E5F6 /* Post+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Firebase.swift"; sourceTree = "<group>"; };
 		DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9535E044BA2264854510367 /* Pods-SocialLite_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev.release.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +155,10 @@
 			children = (
 				B3ED640625FDF5620028E5F6 /* config_dev */,
 				B3ED640725FDF56B0028E5F6 /* config_production */,
+				B3ED644825FDFA430028E5F6 /* Model */,
+				B3ED644A25FDFA510028E5F6 /* Service */,
+				B3ED644725FDFA3B0028E5F6 /* View */,
+				B3ED644925FDFA4A0028E5F6 /* ViewModel */,
 				B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */,
 				B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */,
 				B3ED63C025FDF4E70028E5F6 /* ContentView.swift */,
@@ -194,6 +210,46 @@
 				B3ED644125FDF9580028E5F6 /* GoogleService-Info.plist */,
 			);
 			path = config_production;
+			sourceTree = "<group>";
+		};
+		B3ED644725FDFA3B0028E5F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3ED644825FDFA430028E5F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3ED645625FDFD4E0028E5F6 /* Post.swift */,
+				B3ED644B25FDFBD70028E5F6 /* User.swift */,
+				B3ED645D25FDFDEB0028E5F6 /* Firebase */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3ED644925FDFA4A0028E5F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B3ED644A25FDFA510028E5F6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B3ED645D25FDFDEB0028E5F6 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				B3ED645E25FDFDF90028E5F6 /* User+Firebase.swift */,
+				B3ED646525FDFEB40028E5F6 /* Post+Firebase.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		CB7EA108B2368D7E64F311FC /* Frameworks */ = {
@@ -450,9 +506,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3ED644C25FDFBD70028E5F6 /* User.swift in Sources */,
 				B3ED63BD25FDF4E70028E5F6 /* AppDelegate.swift in Sources */,
 				B3ED63BF25FDF4E70028E5F6 /* SceneDelegate.swift in Sources */,
+				B3ED646625FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
+				B3ED645F25FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
 				B3ED63C125FDF4E70028E5F6 /* ContentView.swift in Sources */,
+				B3ED645725FDFD4E0028E5F6 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,9 +536,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3ED644D25FDFBD70028E5F6 /* User.swift in Sources */,
 				B3ED63F125FDF5300028E5F6 /* AppDelegate.swift in Sources */,
 				B3ED63F225FDF5300028E5F6 /* SceneDelegate.swift in Sources */,
+				B3ED646725FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
+				B3ED646025FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
 				B3ED63F325FDF5300028E5F6 /* ContentView.swift in Sources */,
+				B3ED645825FDFD4E0028E5F6 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +704,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -663,6 +728,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
