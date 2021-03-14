@@ -23,6 +23,8 @@
 		B3ED63F625FDF5300028E5F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C725FDF4E80028E5F6 /* LaunchScreen.storyboard */; };
 		B3ED63F725FDF5300028E5F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C525FDF4E80028E5F6 /* Preview Assets.xcassets */; };
 		B3ED63F825FDF5300028E5F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C225FDF4E80028E5F6 /* Assets.xcassets */; };
+		B3ED643C25FDF94E0028E5F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3ED643B25FDF94E0028E5F6 /* GoogleService-Info.plist */; };
+		B3ED644225FDF9580028E5F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3ED644125FDF9580028E5F6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		B3ED63DE25FDF4E80028E5F6 /* SocialLiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLiteUITests.swift; sourceTree = "<group>"; };
 		B3ED63E025FDF4E80028E5F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3ED63FC25FDF5300028E5F6 /* SocialLite_Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLite_Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3ED643B25FDF94E0028E5F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3ED644125FDF9580028E5F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9535E044BA2264854510367 /* Pods-SocialLite_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev.release.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +183,7 @@
 		B3ED640625FDF5620028E5F6 /* config_dev */ = {
 			isa = PBXGroup;
 			children = (
+				B3ED643B25FDF94E0028E5F6 /* GoogleService-Info.plist */,
 			);
 			path = config_dev;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 		B3ED640725FDF56B0028E5F6 /* config_production */ = {
 			isa = PBXGroup;
 			children = (
+				B3ED644125FDF9580028E5F6 /* GoogleService-Info.plist */,
 			);
 			path = config_production;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ED63C925FDF4E80028E5F6 /* LaunchScreen.storyboard in Resources */,
+				B3ED643C25FDF94E0028E5F6 /* GoogleService-Info.plist in Resources */,
 				B3ED63C625FDF4E80028E5F6 /* Preview Assets.xcassets in Resources */,
 				B3ED63C325FDF4E80028E5F6 /* Assets.xcassets in Resources */,
 			);
@@ -349,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ED63F625FDF5300028E5F6 /* LaunchScreen.storyboard in Resources */,
+				B3ED644225FDF9580028E5F6 /* GoogleService-Info.plist in Resources */,
 				B3ED63F725FDF5300028E5F6 /* Preview Assets.xcassets in Resources */,
 				B3ED63F825FDF5300028E5F6 /* Assets.xcassets in Resources */,
 			);
@@ -623,16 +631,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocialLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pc.SocialLite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -644,16 +654,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocialLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pc.SocialLite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -745,16 +757,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocialLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pc.SocialLite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -766,16 +780,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocialLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pc.SocialLite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
