@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A19963D9C85B523CB9AEEA48 /* Pods_SocialLite_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */; };
+		A82A8CE483E190E34F6756CA /* Pods_SocialLite_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */; };
 		B3ED63BD25FDF4E70028E5F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */; };
 		B3ED63BF25FDF4E70028E5F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */; };
 		B3ED63C125FDF4E70028E5F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63C025FDF4E70028E5F6 /* ContentView.swift */; };
@@ -15,6 +17,12 @@
 		B3ED63C925FDF4E80028E5F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C725FDF4E80028E5F6 /* LaunchScreen.storyboard */; };
 		B3ED63D425FDF4E80028E5F6 /* SocialLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63D325FDF4E80028E5F6 /* SocialLiteTests.swift */; };
 		B3ED63DF25FDF4E80028E5F6 /* SocialLiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63DE25FDF4E80028E5F6 /* SocialLiteUITests.swift */; };
+		B3ED63F125FDF5300028E5F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */; };
+		B3ED63F225FDF5300028E5F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */; };
+		B3ED63F325FDF5300028E5F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63C025FDF4E70028E5F6 /* ContentView.swift */; };
+		B3ED63F625FDF5300028E5F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C725FDF4E80028E5F6 /* LaunchScreen.storyboard */; };
+		B3ED63F725FDF5300028E5F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C525FDF4E80028E5F6 /* Preview Assets.xcassets */; };
+		B3ED63F825FDF5300028E5F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ED63C225FDF4E80028E5F6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B3ED63B925FDF4E70028E5F6 /* SocialLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0592023A712F191A566F0AC2 /* Pods-SocialLite_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev.debug.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		059AF8EFA92E65199A0C6BEC /* Pods-SocialLite_Production.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Production.release.xcconfig"; path = "Target Support Files/Pods-SocialLite_Production/Pods-SocialLite_Production.release.xcconfig"; sourceTree = "<group>"; };
+		12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E64A7C886277ECFDA9A699C /* Pods-SocialLite_Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Production.debug.xcconfig"; path = "Target Support Files/Pods-SocialLite_Production/Pods-SocialLite_Production.debug.xcconfig"; sourceTree = "<group>"; };
+		B3ED63B925FDF4E70028E5F6 /* SocialLite_Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLite_Dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B3ED63C025FDF4E70028E5F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +61,9 @@
 		B3ED63DA25FDF4E80028E5F6 /* SocialLiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialLiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED63DE25FDF4E80028E5F6 /* SocialLiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLiteUITests.swift; sourceTree = "<group>"; };
 		B3ED63E025FDF4E80028E5F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3ED63FC25FDF5300028E5F6 /* SocialLite_Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLite_Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9535E044BA2264854510367 /* Pods-SocialLite_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev.release.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19963D9C85B523CB9AEEA48 /* Pods_SocialLite_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +89,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3ED63F425FDF5300028E5F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A82A8CE483E190E34F6756CA /* Pods_SocialLite_Production.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		367A13B6C7A2CA267427A5E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0592023A712F191A566F0AC2 /* Pods-SocialLite_Dev.debug.xcconfig */,
+				F9535E044BA2264854510367 /* Pods-SocialLite_Dev.release.xcconfig */,
+				4E64A7C886277ECFDA9A699C /* Pods-SocialLite_Production.debug.xcconfig */,
+				059AF8EFA92E65199A0C6BEC /* Pods-SocialLite_Production.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B3ED63B025FDF4E70028E5F6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,15 +118,18 @@
 				B3ED63D225FDF4E80028E5F6 /* SocialLiteTests */,
 				B3ED63DD25FDF4E80028E5F6 /* SocialLiteUITests */,
 				B3ED63BA25FDF4E70028E5F6 /* Products */,
+				367A13B6C7A2CA267427A5E5 /* Pods */,
+				CB7EA108B2368D7E64F311FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		B3ED63BA25FDF4E70028E5F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B3ED63B925FDF4E70028E5F6 /* SocialLite.app */,
+				B3ED63B925FDF4E70028E5F6 /* SocialLite_Dev.app */,
 				B3ED63CF25FDF4E80028E5F6 /* SocialLiteTests.xctest */,
 				B3ED63DA25FDF4E80028E5F6 /* SocialLiteUITests.xctest */,
+				B3ED63FC25FDF5300028E5F6 /* SocialLite_Production.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,12 +137,14 @@
 		B3ED63BB25FDF4E70028E5F6 /* SocialLite */ = {
 			isa = PBXGroup;
 			children = (
+				B3ED640625FDF5620028E5F6 /* config_dev */,
+				B3ED640725FDF56B0028E5F6 /* config_production */,
 				B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */,
 				B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */,
 				B3ED63C025FDF4E70028E5F6 /* ContentView.swift */,
 				B3ED63C225FDF4E80028E5F6 /* Assets.xcassets */,
-				B3ED63C725FDF4E80028E5F6 /* LaunchScreen.storyboard */,
 				B3ED63CA25FDF4E80028E5F6 /* Info.plist */,
+				B3ED63C725FDF4E80028E5F6 /* LaunchScreen.storyboard */,
 				B3ED63C425FDF4E80028E5F6 /* Preview Content */,
 			);
 			path = SocialLite;
@@ -136,24 +176,49 @@
 			path = SocialLiteUITests;
 			sourceTree = "<group>";
 		};
+		B3ED640625FDF5620028E5F6 /* config_dev */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = config_dev;
+			sourceTree = "<group>";
+		};
+		B3ED640725FDF56B0028E5F6 /* config_production */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = config_production;
+			sourceTree = "<group>";
+		};
+		CB7EA108B2368D7E64F311FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */,
+				12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B3ED63B825FDF4E70028E5F6 /* SocialLite */ = {
+		B3ED63B825FDF4E70028E5F6 /* SocialLite_Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3ED63E325FDF4E80028E5F6 /* Build configuration list for PBXNativeTarget "SocialLite" */;
+			buildConfigurationList = B3ED63E325FDF4E80028E5F6 /* Build configuration list for PBXNativeTarget "SocialLite_Dev" */;
 			buildPhases = (
+				84C2D9F4336F4FF58164F60D /* [CP] Check Pods Manifest.lock */,
 				B3ED63B525FDF4E70028E5F6 /* Sources */,
 				B3ED63B625FDF4E70028E5F6 /* Frameworks */,
 				B3ED63B725FDF4E70028E5F6 /* Resources */,
+				A338C4DA2AD9862A55C40ABE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SocialLite;
+			name = SocialLite_Dev;
 			productName = SocialLite;
-			productReference = B3ED63B925FDF4E70028E5F6 /* SocialLite.app */;
+			productReference = B3ED63B925FDF4E70028E5F6 /* SocialLite_Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B3ED63CE25FDF4E80028E5F6 /* SocialLiteTests */ = {
@@ -192,6 +257,25 @@
 			productReference = B3ED63DA25FDF4E80028E5F6 /* SocialLiteUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B3ED63EF25FDF5300028E5F6 /* SocialLite_Production */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3ED63F925FDF5300028E5F6 /* Build configuration list for PBXNativeTarget "SocialLite_Production" */;
+			buildPhases = (
+				C93CD7D6C3093DE0D2E19EF1 /* [CP] Check Pods Manifest.lock */,
+				B3ED63F025FDF5300028E5F6 /* Sources */,
+				B3ED63F425FDF5300028E5F6 /* Frameworks */,
+				B3ED63F525FDF5300028E5F6 /* Resources */,
+				DA45173555A76561D3734054 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialLite_Production;
+			productName = SocialLite;
+			productReference = B3ED63FC25FDF5300028E5F6 /* SocialLite_Production.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -227,7 +311,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B3ED63B825FDF4E70028E5F6 /* SocialLite */,
+				B3ED63B825FDF4E70028E5F6 /* SocialLite_Dev */,
+				B3ED63EF25FDF5300028E5F6 /* SocialLite_Production */,
 				B3ED63CE25FDF4E80028E5F6 /* SocialLiteTests */,
 				B3ED63D925FDF4E80028E5F6 /* SocialLiteUITests */,
 			);
@@ -259,7 +344,98 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3ED63F525FDF5300028E5F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3ED63F625FDF5300028E5F6 /* LaunchScreen.storyboard in Resources */,
+				B3ED63F725FDF5300028E5F6 /* Preview Assets.xcassets in Resources */,
+				B3ED63F825FDF5300028E5F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84C2D9F4336F4FF58164F60D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialLite_Dev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A338C4DA2AD9862A55C40ABE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C93CD7D6C3093DE0D2E19EF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialLite_Production-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA45173555A76561D3734054 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Production/Pods-SocialLite_Production-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Production/Pods-SocialLite_Production-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Production/Pods-SocialLite_Production-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3ED63B525FDF4E70028E5F6 /* Sources */ = {
@@ -288,17 +464,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3ED63F025FDF5300028E5F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3ED63F125FDF5300028E5F6 /* AppDelegate.swift in Sources */,
+				B3ED63F225FDF5300028E5F6 /* SceneDelegate.swift in Sources */,
+				B3ED63F325FDF5300028E5F6 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		B3ED63D125FDF4E80028E5F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B3ED63B825FDF4E70028E5F6 /* SocialLite */;
+			target = B3ED63B825FDF4E70028E5F6 /* SocialLite_Dev */;
 			targetProxy = B3ED63D025FDF4E80028E5F6 /* PBXContainerItemProxy */;
 		};
 		B3ED63DC25FDF4E80028E5F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B3ED63B825FDF4E70028E5F6 /* SocialLite */;
+			target = B3ED63B825FDF4E70028E5F6 /* SocialLite_Dev */;
 			targetProxy = B3ED63DB25FDF4E80028E5F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -433,6 +619,7 @@
 		};
 		B3ED63E425FDF4E80028E5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0592023A712F191A566F0AC2 /* Pods-SocialLite_Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -453,6 +640,7 @@
 		};
 		B3ED63E525FDF4E80028E5F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9535E044BA2264854510367 /* Pods-SocialLite_Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -551,6 +739,48 @@
 			};
 			name = Release;
 		};
+		B3ED63FA25FDF5300028E5F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E64A7C886277ECFDA9A699C /* Pods-SocialLite_Production.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SocialLite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.SocialLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3ED63FB25FDF5300028E5F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 059AF8EFA92E65199A0C6BEC /* Pods-SocialLite_Production.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SocialLite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.SocialLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -563,7 +793,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3ED63E325FDF4E80028E5F6 /* Build configuration list for PBXNativeTarget "SocialLite" */ = {
+		B3ED63E325FDF4E80028E5F6 /* Build configuration list for PBXNativeTarget "SocialLite_Dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B3ED63E425FDF4E80028E5F6 /* Debug */,
@@ -586,6 +816,15 @@
 			buildConfigurations = (
 				B3ED63EA25FDF4E80028E5F6 /* Debug */,
 				B3ED63EB25FDF4E80028E5F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3ED63F925FDF5300028E5F6 /* Build configuration list for PBXNativeTarget "SocialLite_Production" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3ED63FA25FDF5300028E5F6 /* Debug */,
+				B3ED63FB25FDF5300028E5F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
