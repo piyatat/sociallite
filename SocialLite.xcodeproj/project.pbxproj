@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75C3D6B9B25161EE8584AE6C /* Pods_SocialLite_Dev_SocialLiteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B33D2D34F3A8A3F16D947 /* Pods_SocialLite_Dev_SocialLiteUITests.framework */; };
 		A19963D9C85B523CB9AEEA48 /* Pods_SocialLite_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */; };
 		A82A8CE483E190E34F6756CA /* Pods_SocialLite_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */; };
 		B3ED63BD25FDF4E70028E5F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */; };
@@ -33,6 +34,17 @@
 		B3ED646025FDFDF90028E5F6 /* User+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED645E25FDFDF90028E5F6 /* User+Firebase.swift */; };
 		B3ED646625FDFEB40028E5F6 /* Post+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED646525FDFEB40028E5F6 /* Post+Firebase.swift */; };
 		B3ED646725FDFEB40028E5F6 /* Post+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED646525FDFEB40028E5F6 /* Post+Firebase.swift */; };
+		B3ED647525FE11080028E5F6 /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED647425FE11080028E5F6 /* AuthProtocol.swift */; };
+		B3ED647625FE11080028E5F6 /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED647425FE11080028E5F6 /* AuthProtocol.swift */; };
+		B3ED647D25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED647C25FE121C0028E5F6 /* FirebaseAuthManager.swift */; };
+		B3ED647E25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED647C25FE121C0028E5F6 /* FirebaseAuthManager.swift */; };
+		B3ED648425FE12EB0028E5F6 /* DBProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED648325FE12EB0028E5F6 /* DBProtocol.swift */; };
+		B3ED648525FE12EB0028E5F6 /* DBProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED648325FE12EB0028E5F6 /* DBProtocol.swift */; };
+		B3ED648B25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED648A25FE130D0028E5F6 /* FirebaseDBManager.swift */; };
+		B3ED648C25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED648A25FE130D0028E5F6 /* FirebaseDBManager.swift */; };
+		B3ED649225FE386D0028E5F6 /* FirebaseAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED649125FE386D0028E5F6 /* FirebaseAuthTests.swift */; };
+		B3ED64B225FE3B910028E5F6 /* FirebaseDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED64B125FE3B910028E5F6 /* FirebaseDBTests.swift */; };
+		C9A0E5934CF1ABD81876A827 /* Pods_SocialLiteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B402ED7029B4FCF77707583 /* Pods_SocialLiteTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +68,12 @@
 		0592023A712F191A566F0AC2 /* Pods-SocialLite_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev.debug.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		059AF8EFA92E65199A0C6BEC /* Pods-SocialLite_Production.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Production.release.xcconfig"; path = "Target Support Files/Pods-SocialLite_Production/Pods-SocialLite_Production.release.xcconfig"; sourceTree = "<group>"; };
 		12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F64EF68231C89482D9FDEC1 /* Pods-SocialLite_Dev-SocialLiteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev-SocialLiteUITests.debug.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev-SocialLiteUITests/Pods-SocialLite_Dev-SocialLiteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		48FA13666487B43207540721 /* Pods-SocialLiteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLiteTests.release.xcconfig"; path = "Target Support Files/Pods-SocialLiteTests/Pods-SocialLiteTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E64A7C886277ECFDA9A699C /* Pods-SocialLite_Production.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Production.debug.xcconfig"; path = "Target Support Files/Pods-SocialLite_Production/Pods-SocialLite_Production.debug.xcconfig"; sourceTree = "<group>"; };
+		8B402ED7029B4FCF77707583 /* Pods_SocialLiteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLiteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		942B33D2D34F3A8A3F16D947 /* Pods_SocialLite_Dev_SocialLiteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Dev_SocialLiteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04BB746D73E8016E5D3A22F /* Pods-SocialLiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLiteTests.debug.xcconfig"; path = "Target Support Files/Pods-SocialLiteTests/Pods-SocialLiteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3ED63B925FDF4E70028E5F6 /* SocialLite_Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLite_Dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +95,13 @@
 		B3ED645625FDFD4E0028E5F6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B3ED645E25FDFDF90028E5F6 /* User+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Firebase.swift"; sourceTree = "<group>"; };
 		B3ED646525FDFEB40028E5F6 /* Post+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Firebase.swift"; sourceTree = "<group>"; };
+		B3ED647425FE11080028E5F6 /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
+		B3ED647C25FE121C0028E5F6 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		B3ED648325FE12EB0028E5F6 /* DBProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProtocol.swift; sourceTree = "<group>"; };
+		B3ED648A25FE130D0028E5F6 /* FirebaseDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBManager.swift; sourceTree = "<group>"; };
+		B3ED649125FE386D0028E5F6 /* FirebaseAuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthTests.swift; sourceTree = "<group>"; };
+		B3ED64B125FE3B910028E5F6 /* FirebaseDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBTests.swift; sourceTree = "<group>"; };
+		BE202890BB03C4ACBAA40332 /* Pods-SocialLite_Dev-SocialLiteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev-SocialLiteUITests.release.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev-SocialLiteUITests/Pods-SocialLite_Dev-SocialLiteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9535E044BA2264854510367 /* Pods-SocialLite_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLite_Dev.release.xcconfig"; path = "Target Support Files/Pods-SocialLite_Dev/Pods-SocialLite_Dev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A0E5934CF1ABD81876A827 /* Pods_SocialLiteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C3D6B9B25161EE8584AE6C /* Pods_SocialLite_Dev_SocialLiteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +149,10 @@
 				F9535E044BA2264854510367 /* Pods-SocialLite_Dev.release.xcconfig */,
 				4E64A7C886277ECFDA9A699C /* Pods-SocialLite_Production.debug.xcconfig */,
 				059AF8EFA92E65199A0C6BEC /* Pods-SocialLite_Production.release.xcconfig */,
+				B04BB746D73E8016E5D3A22F /* Pods-SocialLiteTests.debug.xcconfig */,
+				48FA13666487B43207540721 /* Pods-SocialLiteTests.release.xcconfig */,
+				3F64EF68231C89482D9FDEC1 /* Pods-SocialLite_Dev-SocialLiteUITests.debug.xcconfig */,
+				BE202890BB03C4ACBAA40332 /* Pods-SocialLite_Dev-SocialLiteUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -181,6 +211,8 @@
 		B3ED63D225FDF4E80028E5F6 /* SocialLiteTests */ = {
 			isa = PBXGroup;
 			children = (
+				B3ED649125FE386D0028E5F6 /* FirebaseAuthTests.swift */,
+				B3ED64B125FE3B910028E5F6 /* FirebaseDBTests.swift */,
 				B3ED63D325FDF4E80028E5F6 /* SocialLiteTests.swift */,
 				B3ED63D525FDF4E80028E5F6 /* Info.plist */,
 			);
@@ -239,6 +271,9 @@
 		B3ED644A25FDFA510028E5F6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B3ED647425FE11080028E5F6 /* AuthProtocol.swift */,
+				B3ED648325FE12EB0028E5F6 /* DBProtocol.swift */,
+				B3ED647B25FE12100028E5F6 /* Firebase */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -252,11 +287,22 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		B3ED647B25FE12100028E5F6 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				B3ED647C25FE121C0028E5F6 /* FirebaseAuthManager.swift */,
+				B3ED648A25FE130D0028E5F6 /* FirebaseDBManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		CB7EA108B2368D7E64F311FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */,
 				12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */,
+				8B402ED7029B4FCF77707583 /* Pods_SocialLiteTests.framework */,
+				942B33D2D34F3A8A3F16D947 /* Pods_SocialLite_Dev_SocialLiteUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +333,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3ED63E625FDF4E80028E5F6 /* Build configuration list for PBXNativeTarget "SocialLiteTests" */;
 			buildPhases = (
+				779B26C1711617B8C8A3D321 /* [CP] Check Pods Manifest.lock */,
 				B3ED63CB25FDF4E80028E5F6 /* Sources */,
 				B3ED63CC25FDF4E80028E5F6 /* Frameworks */,
 				B3ED63CD25FDF4E80028E5F6 /* Resources */,
@@ -305,9 +352,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3ED63E925FDF4E80028E5F6 /* Build configuration list for PBXNativeTarget "SocialLiteUITests" */;
 			buildPhases = (
+				3169A6E8CEF28FC0C0177735 /* [CP] Check Pods Manifest.lock */,
 				B3ED63D625FDF4E80028E5F6 /* Sources */,
 				B3ED63D725FDF4E80028E5F6 /* Frameworks */,
 				B3ED63D825FDF4E80028E5F6 /* Resources */,
+				C9794AFB865D3A8B1F3C1889 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -421,6 +470,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3169A6E8CEF28FC0C0177735 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialLite_Dev-SocialLiteUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		779B26C1711617B8C8A3D321 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialLiteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		84C2D9F4336F4FF58164F60D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +575,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C9794AFB865D3A8B1F3C1889 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Dev-SocialLiteUITests/Pods-SocialLite_Dev-SocialLiteUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Dev-SocialLiteUITests/Pods-SocialLite_Dev-SocialLiteUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialLite_Dev-SocialLiteUITests/Pods-SocialLite_Dev-SocialLiteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DA45173555A76561D3734054 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,12 +617,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ED644C25FDFBD70028E5F6 /* User.swift in Sources */,
+				B3ED648425FE12EB0028E5F6 /* DBProtocol.swift in Sources */,
+				B3ED647525FE11080028E5F6 /* AuthProtocol.swift in Sources */,
 				B3ED63BD25FDF4E70028E5F6 /* AppDelegate.swift in Sources */,
+				B3ED647D25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */,
 				B3ED63BF25FDF4E70028E5F6 /* SceneDelegate.swift in Sources */,
 				B3ED646625FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
 				B3ED645F25FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
 				B3ED63C125FDF4E70028E5F6 /* ContentView.swift in Sources */,
 				B3ED645725FDFD4E0028E5F6 /* Post.swift in Sources */,
+				B3ED648B25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +634,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3ED649225FE386D0028E5F6 /* FirebaseAuthTests.swift in Sources */,
+				B3ED64B225FE3B910028E5F6 /* FirebaseDBTests.swift in Sources */,
 				B3ED63D425FDF4E80028E5F6 /* SocialLiteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,12 +653,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ED644D25FDFBD70028E5F6 /* User.swift in Sources */,
+				B3ED648525FE12EB0028E5F6 /* DBProtocol.swift in Sources */,
+				B3ED647625FE11080028E5F6 /* AuthProtocol.swift in Sources */,
 				B3ED63F125FDF5300028E5F6 /* AppDelegate.swift in Sources */,
+				B3ED647E25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */,
 				B3ED63F225FDF5300028E5F6 /* SceneDelegate.swift in Sources */,
 				B3ED646725FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
 				B3ED646025FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
 				B3ED63F325FDF5300028E5F6 /* ContentView.swift in Sources */,
 				B3ED645825FDFD4E0028E5F6 /* Post.swift in Sources */,
+				B3ED648C25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +859,7 @@
 		};
 		B3ED63E725FDF4E80028E5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B04BB746D73E8016E5D3A22F /* Pods-SocialLiteTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -754,12 +875,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialLite.app/SocialLite";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialLite_Dev.app/SocialLite_Dev";
 			};
 			name = Debug;
 		};
 		B3ED63E825FDF4E80028E5F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48FA13666487B43207540721 /* Pods-SocialLiteTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -775,12 +897,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialLite.app/SocialLite";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialLite_Dev.app/SocialLite_Dev";
 			};
 			name = Release;
 		};
 		B3ED63EA25FDF4E80028E5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F64EF68231C89482D9FDEC1 /* Pods-SocialLite_Dev-SocialLiteUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -800,6 +923,7 @@
 		};
 		B3ED63EB25FDF4E80028E5F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE202890BB03C4ACBAA40332 /* Pods-SocialLite_Dev-SocialLiteUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

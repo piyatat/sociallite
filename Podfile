@@ -12,6 +12,16 @@ end
 ##### Dev
 target 'SocialLite_Dev' do
   share_pods
+
+  target 'SocialLiteTests' do
+    inherit! :search_paths
+    # Pods for testing
+    
+  end
+
+  target 'SocialLiteUITests' do
+    # Pods for testing
+  end
 end
 
 ##### Production
