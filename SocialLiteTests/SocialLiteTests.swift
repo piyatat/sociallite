@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SocialLite
+@testable import SocialLite_Dev
 
 class SocialLiteTests: XCTestCase {
 
