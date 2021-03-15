@@ -10,6 +10,20 @@
 		75C3D6B9B25161EE8584AE6C /* Pods_SocialLite_Dev_SocialLiteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B33D2D34F3A8A3F16D947 /* Pods_SocialLite_Dev_SocialLiteUITests.framework */; };
 		A19963D9C85B523CB9AEEA48 /* Pods_SocialLite_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */; };
 		A82A8CE483E190E34F6756CA /* Pods_SocialLite_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */; };
+		B33FCD2525FF927000F661A5 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2425FF927000F661A5 /* NewPostView.swift */; };
+		B33FCD2625FF927000F661A5 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2425FF927000F661A5 /* NewPostView.swift */; };
+		B33FCD2C25FF929100F661A5 /* UserPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2B25FF929100F661A5 /* UserPostsView.swift */; };
+		B33FCD2D25FF929100F661A5 /* UserPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2B25FF929100F661A5 /* UserPostsView.swift */; };
+		B3BF9AFC25FE557D00C776D2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9AFB25FE557D00C776D2 /* AppState.swift */; };
+		B3BF9AFD25FE557D00C776D2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9AFB25FE557D00C776D2 /* AppState.swift */; };
+		B3BF9B0325FE55C400C776D2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B0225FE55C400C776D2 /* RootView.swift */; };
+		B3BF9B0425FE55C400C776D2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B0225FE55C400C776D2 /* RootView.swift */; };
+		B3BF9B0A25FE55D600C776D2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B0925FE55D600C776D2 /* LoginView.swift */; };
+		B3BF9B0B25FE55D600C776D2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B0925FE55D600C776D2 /* LoginView.swift */; };
+		B3BF9B1125FE55EB00C776D2 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B1025FE55EB00C776D2 /* TimelineView.swift */; };
+		B3BF9B1225FE55EB00C776D2 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B1025FE55EB00C776D2 /* TimelineView.swift */; };
+		B3BF9B1825FE578200C776D2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B1725FE578200C776D2 /* SignUpView.swift */; };
+		B3BF9B1925FE578200C776D2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B1725FE578200C776D2 /* SignUpView.swift */; };
 		B3ED63BD25FDF4E70028E5F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */; };
 		B3ED63BF25FDF4E70028E5F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */; };
 		B3ED63C125FDF4E70028E5F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ED63C025FDF4E70028E5F6 /* ContentView.swift */; };
@@ -74,6 +88,15 @@
 		8B402ED7029B4FCF77707583 /* Pods_SocialLiteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLiteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		942B33D2D34F3A8A3F16D947 /* Pods_SocialLite_Dev_SocialLiteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Dev_SocialLiteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04BB746D73E8016E5D3A22F /* Pods-SocialLiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLiteTests.debug.xcconfig"; path = "Target Support Files/Pods-SocialLiteTests/Pods-SocialLiteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B33FCD2425FF927000F661A5 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
+		B33FCD2B25FF929100F661A5 /* UserPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsView.swift; sourceTree = "<group>"; };
+		B33FCD4B25FF96DB00F661A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33FCD5125FF96E900F661A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3BF9AFB25FE557D00C776D2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		B3BF9B0225FE55C400C776D2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B3BF9B0925FE55D600C776D2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B3BF9B1025FE55EB00C776D2 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		B3BF9B1725FE578200C776D2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B3ED63B925FDF4E70028E5F6 /* SocialLite_Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLite_Dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +104,6 @@
 		B3ED63C225FDF4E80028E5F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3ED63C525FDF4E80028E5F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3ED63C825FDF4E80028E5F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B3ED63CA25FDF4E80028E5F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3ED63CF25FDF4E80028E5F6 /* SocialLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED63D325FDF4E80028E5F6 /* SocialLiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLiteTests.swift; sourceTree = "<group>"; };
 		B3ED63D525FDF4E80028E5F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,7 +215,6 @@
 				B3ED63BE25FDF4E70028E5F6 /* SceneDelegate.swift */,
 				B3ED63C025FDF4E70028E5F6 /* ContentView.swift */,
 				B3ED63C225FDF4E80028E5F6 /* Assets.xcassets */,
-				B3ED63CA25FDF4E80028E5F6 /* Info.plist */,
 				B3ED63C725FDF4E80028E5F6 /* LaunchScreen.storyboard */,
 				B3ED63C425FDF4E80028E5F6 /* Preview Content */,
 			);
@@ -232,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				B3ED643B25FDF94E0028E5F6 /* GoogleService-Info.plist */,
+				B33FCD4B25FF96DB00F661A5 /* Info.plist */,
 			);
 			path = config_dev;
 			sourceTree = "<group>";
@@ -240,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				B3ED644125FDF9580028E5F6 /* GoogleService-Info.plist */,
+				B33FCD5125FF96E900F661A5 /* Info.plist */,
 			);
 			path = config_production;
 			sourceTree = "<group>";
@@ -247,6 +270,12 @@
 		B3ED644725FDFA3B0028E5F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3BF9B0925FE55D600C776D2 /* LoginView.swift */,
+				B33FCD2425FF927000F661A5 /* NewPostView.swift */,
+				B3BF9B0225FE55C400C776D2 /* RootView.swift */,
+				B3BF9B1025FE55EB00C776D2 /* TimelineView.swift */,
+				B3BF9B1725FE578200C776D2 /* SignUpView.swift */,
+				B33FCD2B25FF929100F661A5 /* UserPostsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +293,7 @@
 		B3ED644925FDFA4A0028E5F6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B3BF9AFB25FE557D00C776D2 /* AppState.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -619,13 +649,20 @@
 				B3ED644C25FDFBD70028E5F6 /* User.swift in Sources */,
 				B3ED648425FE12EB0028E5F6 /* DBProtocol.swift in Sources */,
 				B3ED647525FE11080028E5F6 /* AuthProtocol.swift in Sources */,
+				B3BF9AFC25FE557D00C776D2 /* AppState.swift in Sources */,
 				B3ED63BD25FDF4E70028E5F6 /* AppDelegate.swift in Sources */,
+				B33FCD2C25FF929100F661A5 /* UserPostsView.swift in Sources */,
 				B3ED647D25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */,
 				B3ED63BF25FDF4E70028E5F6 /* SceneDelegate.swift in Sources */,
 				B3ED646625FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
+				B3BF9B0A25FE55D600C776D2 /* LoginView.swift in Sources */,
 				B3ED645F25FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
+				B3BF9B0325FE55C400C776D2 /* RootView.swift in Sources */,
 				B3ED63C125FDF4E70028E5F6 /* ContentView.swift in Sources */,
+				B3BF9B1825FE578200C776D2 /* SignUpView.swift in Sources */,
+				B33FCD2525FF927000F661A5 /* NewPostView.swift in Sources */,
 				B3ED645725FDFD4E0028E5F6 /* Post.swift in Sources */,
+				B3BF9B1125FE55EB00C776D2 /* TimelineView.swift in Sources */,
 				B3ED648B25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,13 +692,20 @@
 				B3ED644D25FDFBD70028E5F6 /* User.swift in Sources */,
 				B3ED648525FE12EB0028E5F6 /* DBProtocol.swift in Sources */,
 				B3ED647625FE11080028E5F6 /* AuthProtocol.swift in Sources */,
+				B3BF9AFD25FE557D00C776D2 /* AppState.swift in Sources */,
 				B3ED63F125FDF5300028E5F6 /* AppDelegate.swift in Sources */,
+				B33FCD2D25FF929100F661A5 /* UserPostsView.swift in Sources */,
 				B3ED647E25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */,
 				B3ED63F225FDF5300028E5F6 /* SceneDelegate.swift in Sources */,
 				B3ED646725FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
+				B3BF9B0B25FE55D600C776D2 /* LoginView.swift in Sources */,
 				B3ED646025FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
+				B3BF9B0425FE55C400C776D2 /* RootView.swift in Sources */,
 				B3ED63F325FDF5300028E5F6 /* ContentView.swift in Sources */,
+				B3BF9B1925FE578200C776D2 /* SignUpView.swift in Sources */,
+				B33FCD2625FF927000F661A5 /* NewPostView.swift in Sources */,
 				B3ED645825FDFD4E0028E5F6 /* Post.swift in Sources */,
+				B3BF9B1225FE55EB00C776D2 /* TimelineView.swift in Sources */,
 				B3ED648C25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,13 +863,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SocialLite/Info.plist;
+				INFOPLIST_FILE = SocialLite/config_dev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -843,13 +887,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SocialLite/Info.plist;
+				INFOPLIST_FILE = SocialLite/config_dev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -951,7 +995,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SocialLite/Info.plist;
+				INFOPLIST_FILE = SocialLite/config_production/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -974,7 +1018,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SocialLite/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SocialLite/Info.plist;
+				INFOPLIST_FILE = SocialLite/config_production/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
