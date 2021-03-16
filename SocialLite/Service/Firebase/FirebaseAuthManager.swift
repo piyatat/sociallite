@@ -13,6 +13,7 @@ class FirebaseAuthManager: AuthManagerProtocol {
     var authHandler: AuthStateDidChangeListenerHandle?
     
     public var user: UserInfo?
+    public var userID: String?
     public var delegate: AuthManagerDelegate?
     
     deinit {
@@ -22,6 +23,7 @@ class FirebaseAuthManager: AuthManagerProtocol {
         }
         self.authHandler = nil
         self.user = nil
+        self.userID = nil
         self.delegate = nil
     }
     
@@ -30,6 +32,7 @@ class FirebaseAuthManager: AuthManagerProtocol {
         // Listen to Auth State change
         self.authHandler = Auth.auth().addStateDidChangeListener { (auth, user) in
             self.user = user
+            self.userID = self.user?.uid
             // Notify delegate
             self.delegate?.onAuthStatusUpdated()
         }
@@ -51,6 +54,7 @@ class FirebaseAuthManager: AuthManagerProtocol {
         do {
             try Auth.auth().signOut()
             self.user = nil
+            self.userID = nil
         } catch {
             // TODO: handle this case
             debugPrint("Error: \(error.localizedDescription)")

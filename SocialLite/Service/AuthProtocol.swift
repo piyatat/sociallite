@@ -13,6 +13,7 @@ protocol AuthManagerDelegate {
 
 protocol AuthManagerProtocol {
     
+    var userID: String? { get set }
     var delegate: AuthManagerDelegate? { get set }
     
     func config()
