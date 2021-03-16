@@ -12,20 +12,22 @@ struct RootView: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
-        NavigationView {
-            if let _ = self.appState.currentUser {
+        if let _ = self.appState.currentUserID {
+            NavigationView {
                 TimelineView()
                     .environmentObject(self.appState)
-            } else {
-                LoginView()
-                    .environmentObject(self.appState)
             }
+        } else {
+            LoginView()
+                .environmentObject(self.appState)
         }
     }
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        let appState = AppState()
+        
+        RootView().environmentObject(appState)
     }
 }

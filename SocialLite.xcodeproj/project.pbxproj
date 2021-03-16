@@ -273,8 +273,8 @@
 				B3BF9B0925FE55D600C776D2 /* LoginView.swift */,
 				B33FCD2425FF927000F661A5 /* NewPostView.swift */,
 				B3BF9B0225FE55C400C776D2 /* RootView.swift */,
-				B3BF9B1025FE55EB00C776D2 /* TimelineView.swift */,
 				B3BF9B1725FE578200C776D2 /* SignUpView.swift */,
+				B3BF9B1025FE55EB00C776D2 /* TimelineView.swift */,
 				B33FCD2B25FF929100F661A5 /* UserPostsView.swift */,
 			);
 			path = View;
