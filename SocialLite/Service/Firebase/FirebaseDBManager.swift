@@ -67,8 +67,11 @@ class FirebaseDBManager: DBManagerProtocol {
     func deletePost(_ item: Post) {
         // Delete Post
         self.deletePost(item) { (error, ref) in
-            // TODO: implement this
+            if let error = error {
+                debugPrint(error.localizedDescription)
+            }
             // Notify delegate
+            self.delegate?.onItemRemoved(removedItem: item)
         }
     }
     func deletePost(_ item: Post, withCompletion block: @escaping (Error?, DatabaseReference) -> Void) {
@@ -109,8 +112,10 @@ class FirebaseDBManager: DBManagerProtocol {
     
     func fetchUserPosts(for userID: String, startAfter offsetItem: Post?) {
         self.fetchUserPosts(for: userID, startAfter: offsetItem) { (snapshot) in
-            // TODO: implement this
+            // Parse items
+            let items = Post.Load(snapshot: snapshot)
             // Notify delegate
+            self.delegate?.onUserItemsFetchCompleted(userID: userID, items: items, startAfter: offsetItem)
         } withCancel: { (error) in
             debugPrint("Error: \(error.localizedDescription)")
         }

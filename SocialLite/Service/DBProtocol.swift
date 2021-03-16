@@ -16,6 +16,8 @@ protocol DBManagerDelegate {
     func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?)
     // Item is removed from DB (only call on remove request from the current session)
     func onItemRemoved(removedItem: Post?)
+    // Multiple user's items fetch (start after specified post, nil for start from the beginning)
+    func onUserItemsFetchCompleted(userID: String, items: [Post], startAfter offsetItem: Post?)
     
     // User Info fetch
     func onUserFetchCompleted(user: User?)
