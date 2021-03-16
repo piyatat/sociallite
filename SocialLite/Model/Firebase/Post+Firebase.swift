@@ -28,7 +28,7 @@ extension Post {
                 items.append(item)
             }
         }
-        return items
+        return items.reversed()
     }
     
     init?(snapshot: DataSnapshot) {

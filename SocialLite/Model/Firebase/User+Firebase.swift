@@ -28,7 +28,7 @@ extension User {
                 items.append(item)
             }
         }
-        return items
+        return items.reversed()
     }
     
     init?(snapshot: DataSnapshot) {
