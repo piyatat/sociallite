@@ -9,6 +9,9 @@ import Foundation
 
 protocol AuthManagerDelegate {
     func onAuthStatusUpdated()
+    func onSignInCompleted(email: String, error: Error?)
+    func onSignOutCompleted(email: String?, error: Error?)
+    func onSignUpCompleted(userID: String?, email: String, displayName: String, error: Error?)
 }
 
 protocol AuthManagerProtocol {
@@ -19,5 +22,5 @@ protocol AuthManagerProtocol {
     func config()
     func signIn(email: String, password: String)
     func signOut()
-    func signUp(email: String, password: String)
+    func signUp(email: String, password: String, displayName: String)
 }

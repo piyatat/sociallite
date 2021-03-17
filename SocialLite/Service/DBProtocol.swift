@@ -9,18 +9,18 @@ import Foundation
 
 protocol DBManagerDelegate {
     // New item is added into DB
-    func onItemCreated(item: Post?)
+    func onItemCreated(item: Post?, error: Error?)
     // Single item fetch
-    func onItemFetchCompleted(item: Post?)
+    func onItemFetchCompleted(item: Post?, error: Error?)
     // Multiple items fetch (start after specified post, nil for start from the beginning)
-    func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?)
+    func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?, error: Error?)
     // Item is removed from DB (only call on remove request from the current session)
-    func onItemRemoved(removedItem: Post?)
+    func onItemRemoved(removedItem: Post?, error: Error?)
     // Multiple user's items fetch (start after specified post, nil for start from the beginning)
-    func onUserItemsFetchCompleted(userID: String, items: [Post], startAfter offsetItem: Post?)
+    func onUserItemsFetchCompleted(userID: String, items: [Post], startAfter offsetItem: Post?, error: Error?)
     
     // User Info fetch
-    func onUserFetchCompleted(user: User?)
+    func onUserFetchCompleted(user: User?, error: Error?)
 }
 
 protocol DBManagerProtocol {
@@ -30,7 +30,7 @@ protocol DBManagerProtocol {
     func config()
     
     // Post DB related functions
-    func createPost(_ text: String, user: User)
+    func createPost(_ text: String, userID: String)
     func deletePost(_ item: Post)
     func fetchPosts(startAfter offsetItem: Post?)
     func fetchPost(_ item: Post)
