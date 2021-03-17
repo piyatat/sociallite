@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
+// The max number of items for each fetch request
 let FIREBASE_QUERY_LIMIT = 10
 
 class FirebaseDBManager: DBManagerProtocol {
@@ -25,9 +26,11 @@ class FirebaseDBManager: DBManagerProtocol {
     }
     
     // MARK: - Setup Function
+    // Config DB with default path
     func config() {
         self.config(withItemPath: "Posts", userPath: "Users")
     }
+    // Config DB with specific path
     func config(withItemPath itemPath: String, userPath: String) {
         // Create DB ref to the specified path
         self.itemDBRef = Database.database().reference(withPath: itemPath)
@@ -42,25 +45,26 @@ class FirebaseDBManager: DBManagerProtocol {
             // Parse items
             let items = Post.Load(snapshot: snapshot)
             // Notify delegate
-            self.delegate?.onItemCreated(item: items.first)
+            self.delegate?.onItemCreated(item: items.first, error: nil)
         }, withCancel: { (error) in
             debugPrint("Error: \(error.localizedDescription)")
+            // Notify delegate
+            self.delegate?.onItemCreated(item: nil, error: error)
         })
     }
     
     // MARK: - Item DB Functions
-    func createPost(_ text: String, user: User) {
-        self.createPost(text, user: user) { (error, ref) in
-            // TODO: implement this
+    func createPost(_ text: String, userID: String) {
+        self.createPost(text, userID: userID) { (error, ref) in
+            // No need to notify delegate, new item observer will do that
         }
     }
-    func createPost(_ text: String, user: User, withCompletion block: @escaping (Error?, DatabaseReference) -> Void) {
-        let uid = user.uid
+    func createPost(_ text: String, userID: String, withCompletion block: @escaping (Error?, DatabaseReference) -> Void) {
         let time = Int(Date.timeIntervalSinceReferenceDate)
-        let pid = "\(uid)_\(time)"
+        let pid = "\(userID)_\(time)"
         
         let postRef = self.itemDBRef?.child(pid)
-        let post = Post(key: pid, text: text, time: time, uid: uid)
+        let post = Post(key: pid, text: text, time: time, uid: userID)
         postRef?.setValue(post.toAnyObject(), withCompletionBlock: block)
     }
     
@@ -71,7 +75,7 @@ class FirebaseDBManager: DBManagerProtocol {
                 debugPrint(error.localizedDescription)
             }
             // Notify delegate
-            self.delegate?.onItemRemoved(removedItem: item)
+            self.delegate?.onItemRemoved(removedItem: item, error: error)
         }
     }
     func deletePost(_ item: Post, withCompletion block: @escaping (Error?, DatabaseReference) -> Void) {
@@ -85,13 +89,15 @@ class FirebaseDBManager: DBManagerProtocol {
             // Parse items
             let items = Post.Load(snapshot: snapshot)
             // Notify delegate
-            self.delegate?.onItemsFetchCompleted(items: items, startAfter: offsetItem)
+            self.delegate?.onItemsFetchCompleted(items: items, startAfter: offsetItem, error: nil)
         } withCancel: { (error) in
             debugPrint("Error: \(error.localizedDescription)")
+            // Notify delegate
+            self.delegate?.onItemsFetchCompleted(items: [], startAfter: offsetItem, error: error)
         }
     }
     func fetchPosts(startAfter offsetItem: Post?, withCompletion block: @escaping (DataSnapshot) -> Void, withCancel cancelBlock: ((Error) -> Void)? = nil) {
-        let ref = self.itemDBRef?.queryOrdered(byChild: "time").queryStarting(atValue: 0).queryEnding(atValue: (offsetItem?.time ?? Int(Date.timeIntervalSinceReferenceDate))).queryLimited(toLast: UInt(FIREBASE_QUERY_LIMIT))
+        let ref = self.itemDBRef?.queryOrdered(byChild: "time").queryStarting(atValue: 0).queryEnding(atValue: (offsetItem?.time ?? Int(Date.timeIntervalSinceReferenceDate))-1).queryLimited(toLast: UInt(FIREBASE_QUERY_LIMIT))
         ref?.observeSingleEvent(of: .value, with: block, withCancel: cancelBlock)
     }
     
@@ -100,9 +106,11 @@ class FirebaseDBManager: DBManagerProtocol {
             // Parse items
             let items = Post.Load(snapshot: snapshot)
             // Notify delegate
-            self.delegate?.onItemFetchCompleted(item: items.first)
+            self.delegate?.onItemFetchCompleted(item: items.first, error: nil)
         } withCancel: { (error) in
             debugPrint("Error: \(error.localizedDescription)")
+            // Notify delegate
+            self.delegate?.onItemFetchCompleted(item: nil, error: error)
         }
     }
     func fetchPost(_ item: Post, withCompletion block: @escaping (DataSnapshot) -> Void, withCancel cancelBlock: ((Error) -> Void)? = nil) {
@@ -115,20 +123,22 @@ class FirebaseDBManager: DBManagerProtocol {
             // Parse items
             let items = Post.Load(snapshot: snapshot)
             // Notify delegate
-            self.delegate?.onUserItemsFetchCompleted(userID: userID, items: items, startAfter: offsetItem)
+            self.delegate?.onUserItemsFetchCompleted(userID: userID, items: items, startAfter: offsetItem, error: nil)
         } withCancel: { (error) in
             debugPrint("Error: \(error.localizedDescription)")
+            // Notify delegate
+            self.delegate?.onUserItemsFetchCompleted(userID: userID, items: [], startAfter: offsetItem, error: error)
         }
     }
     func fetchUserPosts(for userID: String, startAfter offsetItem: Post?, withCompletion block: @escaping (DataSnapshot) -> Void, withCancel cancelBlock: ((Error) -> Void)? = nil) {
-        let ref = self.itemDBRef?.queryOrderedByKey().queryStarting(atValue: "\(userID)_0").queryEnding(atValue: "\(userID)_\(offsetItem?.time ?? Int(Date.timeIntervalSinceReferenceDate))").queryLimited(toLast: UInt(FIREBASE_QUERY_LIMIT))
+        let ref = self.itemDBRef?.queryOrderedByKey().queryStarting(atValue: "\(userID)_0").queryEnding(atValue: "\(userID)_\((offsetItem?.time ?? Int(Date.timeIntervalSinceReferenceDate))-1)").queryLimited(toLast: UInt(FIREBASE_QUERY_LIMIT))
         ref?.observeSingleEvent(of: .value, with: block, withCancel: cancelBlock)
     }
     
     func updatePost(_ item: Post, updatedText text: String) {
         self.updatePost(item, updatedText: text) { (error, ref) in
-            // TODO: implement this
-            // Notify delegate
+            // Fetch this post again to update cache data
+            self.fetchPost(item)
         }
     }
     func updatePost(_ item: Post, updatedText text: String, withCompletion block: @escaping (Error?, DatabaseReference) -> Void) {
@@ -139,7 +149,8 @@ class FirebaseDBManager: DBManagerProtocol {
     // MARK: - User DB Functions
     func createUser(_ user: User) {
         self.createUser(user) { (error, ref) in
-            // TODO: implement this
+            // Fetch this user again to update cache data
+            self.fetchUser(fromUserID: user.uid)
         }
     }
     func createUser(_ user: User, withCompletion block: @escaping (Error?, DatabaseReference) -> Void) {
@@ -152,9 +163,11 @@ class FirebaseDBManager: DBManagerProtocol {
             // Parse items
             let users = User.Load(snapshot: snapshot)
             // Notify delegate
-            self.delegate?.onUserFetchCompleted(user: users.first)
+            self.delegate?.onUserFetchCompleted(user: users.first, error: nil)
         } withCancel: { (error) in
             debugPrint("Error: \(error.localizedDescription)")
+            // Notify delegate
+            self.delegate?.onUserFetchCompleted(user: nil, error: error)
         }
     }
     func fetchUser(fromUserID userID: String, withCompletion block: @escaping (DataSnapshot) -> Void, withCancel cancelBlock: ((Error) -> Void)? = nil) {
@@ -164,7 +177,8 @@ class FirebaseDBManager: DBManagerProtocol {
     
     func updateUser(_ user: User, updatedDisplayName: String) {
         self.updateUser(user, updatedDisplayName: updatedDisplayName) { (error, ref) in
-            // TODO: implement this
+            // Fetch this user again to update cache data
+            self.fetchUser(fromUserID: user.uid)
         }
     }
     func updateUser(_ user: User, updatedDisplayName: String, withCompletion block: @escaping (Error?, DatabaseReference) -> Void) {

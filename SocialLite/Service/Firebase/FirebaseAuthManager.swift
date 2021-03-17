@@ -44,6 +44,8 @@ class FirebaseAuthManager: AuthManagerProtocol {
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
+            // Notify delegate
+            self.delegate?.onSignInCompleted(email: email, error: error)
         }
     }
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
@@ -51,24 +53,30 @@ class FirebaseAuthManager: AuthManagerProtocol {
     }
     
     func signOut() {
+        let email = self.user?.email
+        var error: Error?
         do {
             try Auth.auth().signOut()
             self.user = nil
             self.userID = nil
-        } catch {
-            // TODO: handle this case
-            debugPrint("Error: \(error.localizedDescription)")
+        } catch let e {
+            debugPrint("Error: \(e.localizedDescription)")
+            error = e
         }
+        // Notify delegate
+        self.delegate?.onSignOutCompleted(email: email, error: error)
     }
     
-    func signUp(email: String, password: String) {
-        self.signUp(email: email, password: password) { (result, error) in
+    func signUp(email: String, password: String, displayName: String) {
+        self.signUp(email: email, password: password, displayName: displayName) { (result, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
+            // Notify delegate
+            self.delegate?.onSignUpCompleted(userID: result?.user.uid, email: email, displayName: displayName, error: error)
         }
     }
-    func signUp(email: String, password: String, handler: @escaping AuthDataResultCallback) {
+    func signUp(email: String, password: String, displayName: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
     }
 }
