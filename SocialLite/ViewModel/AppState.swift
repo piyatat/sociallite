@@ -38,6 +38,9 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
     public var authManager: AuthManagerProtocol?
     public var dbManager: DBManagerProtocol?
     
+    // Flag to check whether there is fetch require at least one
+    private var isFirstFetchDone = false
+    
     // MARK: - Config
     func config(auth: AuthManagerProtocol, db: DBManagerProtocol) {
         self.authManager = auth
@@ -59,6 +62,7 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
         }
     }
     
+    
     // MARK: - AuthManagerDelegate
     func onAuthStatusUpdated() {
         self.currentUserID = self.authManager?.userID
@@ -77,6 +81,7 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
         self.signInError = error
     }
     func onSignOutCompleted(email: String?, error: Error?) {
+        self.currentUserID = nil
         self.signOutError = error
     }
     func onSignUpCompleted(userID: String?, email: String, displayName: String, error: Error?) {
@@ -90,11 +95,12 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
         self.signUpError = error
     }
     
+    
     // MARK: - DBManagerDelegate
     // New item is added into DB
     func onItemCreated(item: Post?, error: Error?) {
-        if self.items.count > 0 {
-            // Only update state when there are cached items (fetch atleast once)
+        if self.isFirstFetchDone {
+            // Only update state when the first fetch is finished
             if let item = item, item.uid == self.currentUserID {
                 // If this is post created by current user, insert into top of cached items
                 self.items = [item] + self.items
@@ -129,6 +135,8 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
     }
     // Multiple items fetch (start after specified post, nil for start from the beginning)
     func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?, error: Error?) {
+        // Update first fetch flag
+        self.isFirstFetchDone = true
         if items.count > 0 {
             // if there is item in the list, it is possible to have more
             self.hasMorePost = true
