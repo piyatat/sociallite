@@ -16,7 +16,16 @@ struct LoginView: View {
     @State var password = ""
     
     var body: some View {
-        GeometryReader { georeader in
+        
+        let hasError: Binding<Bool> = Binding<Bool> { () -> Bool in
+            return self.appState.signInError != nil
+        } set: { (visible) in
+            if !visible {
+                self.appState.signInError = nil
+            }
+        }
+        
+        return GeometryReader { georeader in
             VStack {
                 Spacer()
                 
@@ -44,8 +53,8 @@ struct LoginView: View {
                 .padding(.horizontal)
                 
                 Button("Sign In") {
-                    // TODO: implement this
-                    self.appState.currentUserID = "TESTING_KEY"
+                    // Sign in
+                    self.appState.authManager?.signIn(email: self.email, password: self.password)
                 }
                 .font(.headline)
                 .foregroundColor(.blue)
@@ -76,6 +85,10 @@ struct LoginView: View {
             .sheet(isPresented: self.$showSignUpView, content: {
                 SignUpView().environmentObject(self.appState)
             })
+            .alert(isPresented: hasError) {
+                // There is an error, show error message (if no message, show default error message)
+                Alert(title: Text("Error"), message: Text("\(self.appState.signInError?.localizedDescription ?? "Something worng, please try again!")"), dismissButton: .default(Text("OK")))
+            }
         }
     }
 }
