@@ -17,7 +17,16 @@ struct SignUpView: View {
     @State private var displayName = ""
     
     var body: some View {
-        GeometryReader { georeader in
+        
+        let hasError: Binding<Bool> = Binding<Bool> { () -> Bool in
+            return self.appState.signUpError != nil
+        } set: { (visible) in
+            if !visible {
+                self.appState.signUpError = nil
+            }
+        }
+        
+        return GeometryReader { georeader in
             VStack {
                 HStack {
                     Button("Cancel") {
@@ -60,8 +69,8 @@ struct SignUpView: View {
                 .padding()
                 
                 Button("Sign Up") {
-                    // TODO: implement this
                     // Sign Up Action
+                    self.appState.authManager?.signUp(email: self.email, password: self.password, displayName: self.displayName)
                 }
                 .font(.headline)
                 .foregroundColor(.blue)
@@ -75,6 +84,10 @@ struct SignUpView: View {
             }
             .background(Color("BGColor"))
             .ignoresSafeArea()
+        }
+        .alert(isPresented: hasError) {
+            // There is an error, show error message (if no message, show default error message)
+            Alert(title: Text("Error"), message: Text("\(self.appState.signUpError?.localizedDescription ?? "Something worng, please try again!")"), dismissButton: .default(Text("OK")))
         }
     }
 }
