@@ -27,18 +27,31 @@ protocol DBManagerProtocol {
     
     var delegate: DBManagerDelegate? { get set }
     
+    // This is the designated function for setting up the instance
+    // should be called before any other functions
     func config()
     
-    // Post DB related functions
+    // MARK: - Post DB related functions
+    // Create new post for this userID
     func createPost(_ text: String, userID: String)
+    // Delete post
     func deletePost(_ item: Post)
+    // Fetch posts after the specified post (if nil, fetch from the start) (for pagination)
+    // should fetch for a certain amount of item (don't fetch all at once)
     func fetchPosts(startAfter offsetItem: Post?)
+    // Fetch specific post (in case of there is an update for this post)
     func fetchPost(_ item: Post)
+    // Fetch user's posts after the specified post (if nil, fetch from the start) (for pagination)
+    // should fetch for a certain amount of item (don't fetch all at once)
     func fetchUserPosts(for userID: String, startAfter offsetItem: Post?)
+    // Update specific post with new data
     func updatePost(_ item: Post, updatedText text: String)
     
-    // User DB related functions
+    // MARK: - User DB related functions
+    // Create new user for this user object (in case of auth system and db system may be from difference service)
     func createUser(_ user: User)
+    // Fetch user info for this userID
     func fetchUser(fromUserID userID: String)
+    // Update specific user with new data
     func updateUser(_ user: User, updatedDisplayName: String)
 }
