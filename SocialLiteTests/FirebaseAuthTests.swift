@@ -33,13 +33,15 @@ class FirebaseAuthTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    // MARK: - SignUp Function
     // SignUp with email & password
     func testSignUp_CompleteData_Success() throws {
         let email = "UT_\(Int(Date.timeIntervalSinceReferenceDate))@toremove.com"
         let password = "UT_Password"
+        let displayName = "Unit Tester"
 
         let expectation = XCTestExpectation()
-        FirebaseAuthTests.authManager.signUp(email: email, password: password) { (result, error) in
+        FirebaseAuthTests.authManager.signUp(email: email, password: password, displayName: displayName) { (result, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
@@ -47,6 +49,7 @@ class FirebaseAuthTests: XCTestCase {
                 // sign up success
                 debugPrint(result as Any)
             }
+            // result should contain user object
             XCTAssertNotNil(result?.user)
             // Need to sign out since successful sign up will automatically sign in
             FirebaseAuthTests.authManager.signOut()
@@ -57,7 +60,7 @@ class FirebaseAuthTests: XCTestCase {
     // SignUp with no email & password
     func testSignUp_NoEmail_Fail() throws {
         let expectation = XCTestExpectation()
-        FirebaseAuthTests.authManager.signUp(email: "", password: "") { (result, error) in
+        FirebaseAuthTests.authManager.signUp(email: "", password: "", displayName: "") { (result, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
@@ -65,6 +68,7 @@ class FirebaseAuthTests: XCTestCase {
                 // sign up success
                 debugPrint(result as Any)
             }
+            // result should NOT contain user object
             XCTAssertNil(result?.user)
             expectation.fulfill()
         }
@@ -74,9 +78,10 @@ class FirebaseAuthTests: XCTestCase {
     func testSignUp_NoPassword_Fail() throws {
         // to prevent the same email as other test case
         let email = "UT_\(Int(Date.timeIntervalSinceReferenceDate))@toremove.com"
+        let displayName = "Unit Tester"
 
         let expectation = XCTestExpectation()
-        FirebaseAuthTests.authManager.signUp(email: email, password: "") { (result, error) in
+        FirebaseAuthTests.authManager.signUp(email: email, password: "", displayName: displayName) { (result, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
             }
@@ -84,12 +89,14 @@ class FirebaseAuthTests: XCTestCase {
                 // sign up success
                 debugPrint(result as Any)
             }
+            // result should NOT contain user object
             XCTAssertNil(result?.user)
             expectation.fulfill()
         }
         self.wait(for: [expectation], timeout: 10)
     }
 
+    // MARK: - SignIn Function
     // SignIn with email & password
     func testSignIn_CompleteData_Success() throws {
         let expectation = XCTestExpectation()
@@ -101,6 +108,7 @@ class FirebaseAuthTests: XCTestCase {
                 // sign in success
                 debugPrint(result as Any)
             }
+            // result should contain user object
             XCTAssertNotNil(result?.user)
             // Need to sign out
             FirebaseAuthTests.authManager.signOut()
@@ -122,6 +130,7 @@ class FirebaseAuthTests: XCTestCase {
                 // sign in success
                 debugPrint(result as Any)
             }
+            // result should NOT contain user object
             XCTAssertNil(result?.user)
             expectation.fulfill()
         }
@@ -140,6 +149,7 @@ class FirebaseAuthTests: XCTestCase {
                 // sign in success
                 debugPrint(result as Any)
             }
+            // result should NOT contain user object
             XCTAssertNil(result?.user)
             expectation.fulfill()
         }

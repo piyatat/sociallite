@@ -15,7 +15,7 @@ class FirebaseDBTests: XCTestCase {
     static let testPassword = "MockupPassword"
     // Change this to the actual ID (key) for testing fetch
     static let userID = "ku9QBQD2ENYnyV1ffTcHsRSmaf82"
-    static let postID = "ku9QBQD2ENYnyV1ffTcHsRSmaf82_637137836"
+    static let postID = "lZ9cZuvgG1fjN91ExnQDKJq0Ua93_637743158"
     
     static let authManager = FirebaseAuthManager()
     static let dbManager = FirebaseDBManager()
@@ -59,6 +59,7 @@ class FirebaseDBTests: XCTestCase {
 
         self.wait(for: [expectation], timeout: 10)
     }
+    
     func testFetchPosts_FromStart_Success() throws {
         let expectation = XCTestExpectation()
 
@@ -74,6 +75,7 @@ class FirebaseDBTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 10)
     }
+    
     func testFetchPost_FromPostID_Success() throws {
         let post = Post(key: FirebaseDBTests.postID, text: "", time: 0, uid: "")
         let expectation = XCTestExpectation()
@@ -94,6 +96,7 @@ class FirebaseDBTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 10)
     }
+    
     func testFetchUserPosts_FromStart_Success() throws {
         let expectation = XCTestExpectation()
 
@@ -114,6 +117,7 @@ class FirebaseDBTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 10)
     }
+    
     func testUpdatePost_Success() throws {
         let post = Post(key: FirebaseDBTests.postID, text: "", time: 0, uid: "")
         let expectation = XCTestExpectation()
@@ -130,6 +134,7 @@ class FirebaseDBTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 10)
     }
+    
     
     // MARK: - User
     func testCreateUser_Success() throws {
@@ -148,6 +153,7 @@ class FirebaseDBTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 10)
     }
+    
     func testFetchUser_Success() throws {
         let expectation = XCTestExpectation()
         
@@ -167,6 +173,7 @@ class FirebaseDBTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 10)
     }
+    
     func testUpdateUser__Success() throws {
         let user = User(key: "TO_REMOVE_USER_ID", uid: "TO_REMOVE_USER_ID", displayName: "Unit Tester", email: "ut@ut.com")
         let expectation = XCTestExpectation()
