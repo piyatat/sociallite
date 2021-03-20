@@ -1,88 +1,73 @@
 
-# Project Title
+# SocialLite
 
-One Paragraph of project description goes here
+A simple social media app build with SwiftUI + Firebase service.
+
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+1. XCode (This project created with SwiftUI 2 + XCode 12.4)
+2. CocoaPods 
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+1. Clone this project 
 
 ```
-Give the example
+git clone https://github.com/piyatat/sociallite
 ```
 
-And repeat
+2. There are 2 targets: 1 for dev, and another for production
+Change BundleID of both target
+
+3. Setup Firebase Project (Ideally 2 projects: 1 for dev target, 1 for production target)
+- Enable Authentication with Email & Password
+- Enable Realtime Database
+- Edit Realtime Database rules with
 
 ```
-until finished
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+      "Posts": {
+        ".indexOn": "time"
+      }
+  }
+}
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+4. In Firebase project setting, add iOS with the BundleID from (2)
+5. Download / Replace "GoogleService-Info.plist" in the project folder
+
+```
+<PROJECT_DIR>/SocialList/config_dev
+<PROJECT_DIR>/SocialList/config_production
+```
+
+6. Run pod install from project directory
+```
+pod install
+```
+
+
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+Before running test in XCode, you need to change some test parameters in
 ```
-Give an example
+SocialLiteTests/FirebaseAuthTests.swift
+SocialLiteTests/FirebaseDBTests.swift
 ```
 
-### And coding style tests
+UITest will be run on dummy object/environment, so you don't need to change anything.
+But you have to disable "Connect Hardware Keyboard" in simulator, else it'll cause some issue when simulating typing text into TextField
 
-Explain what these tests test and why
 
-```
-Give an example
-```
 
-## Deployment
+## Author
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* **Piyatat Chatvorawit** - [Github](https://github.com/piyatat)
