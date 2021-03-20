@@ -19,6 +19,8 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
     // Current Sign in user
     @Published var currentUserID: String?
     
+    @Published var selectedUserID: String?
+    
     @Published var hasNewPost = false
     @Published var hasMorePost = false
     @Published var hasMoreUserPost = false
@@ -102,11 +104,17 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
         if self.isFirstFetchDone {
             // Only update state when the first fetch is finished
             if let item = item, item.uid == self.currentUserID {
-                // If this is post created by current user, insert into top of cached items
-                self.items = [item] + self.items
-                // Also update cached items of current user
-                if let uid = self.currentUserID, let items = self.userItems[uid] {
-                    self.userItems[uid] = [item] + items
+                // If this is post created by current user
+                // check whether this item is newer than the first item in the list
+                if let firstItem = self.items.first {
+                    if firstItem.time < item.time {
+                        // Newer than the first item in list
+                        // Insert at the first item of the list
+                        self.items = [item] + self.items
+                    }
+                } else {
+                    // No item in list
+                    self.items = [item] + self.items
                 }
                 // No need to update state in this case
                 self.hasNewPost = false
@@ -151,13 +159,15 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
     func onItemRemoved(removedItem: Post?, error: Error?) {
         // Remove item from the list (if exist)
         if let item = removedItem {
-            let size = self.items.count
+            var items = self.items
+            let size = items.count
             for i in 0..<size {
-                if self.items[i].key == item.key {
-                    self.items.remove(at: i)
+                if items[i].key == item.key {
+                    items.remove(at: i)
                     break
                 }
             }
+            self.items = items
             // Remove item from user's list as well (if they are cached)
             if let userItems = self.userItems[item.uid] {
                 var items = userItems
