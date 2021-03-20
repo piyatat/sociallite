@@ -8,6 +8,13 @@
 import XCTest
 
 class SocialLiteUITests: XCTestCase {
+    
+    static var app = XCUIApplication()
+    
+    override class func setUp() {
+        // Pass launch param to setup App in testing mode
+        SocialLiteUITests.app.launchArguments.append("UITesting")
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,22 +28,188 @@ class SocialLiteUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    func testSignIn_WrongPassword_Fail() throws {
+        let app = SocialLiteUITests.app
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let emailAddressTextField = app.textFields["Email Address"]
+        emailAddressTextField.tap()
+        emailAddressTextField.typeText("DemoUser@toremove.com")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("WrongPassword")
+        
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
+        
+        let signInButton = app.buttons["Sign In"]
+        signInButton.tap()
+        
+        let elementsQuery = app.alerts["Error"].scrollViews.otherElements
+        elementsQuery.buttons["OK"].tap()
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    func testSignIn_Success() throws {
+        let app = SocialLiteUITests.app
+        app.launch()
+        
+        let emailAddressTextField = app.textFields["Email Address"]
+        emailAddressTextField.tap()
+        emailAddressTextField.typeText("DemoUser@toremove.com")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("MockupPassword")
+        
+        let returnButton = app/*@START_MENU_TOKEN@*/.buttons["Return"]/*[[".keyboards",".buttons[\"return\"]",".buttons[\"Return\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
+        returnButton.tap()
+        
+        let signInButton = app.buttons["Sign In"]
+        signInButton.tap()
+    }
+    
+    func testSignUp_DuplicatedEmail_Fail() throws {
+        let app = SocialLiteUITests.app
+        app.launch()
+        
+        let signUpButton = app.buttons["Sign Up"]
+        signUpButton.tap()
+        
+        let enterEmailAddressTextField = app.textFields["Enter Email Address"]
+        enterEmailAddressTextField.tap()
+        enterEmailAddressTextField.typeText("DemoUser@toremove.com")
+        
+        let enterDisplayNameTextField = app.textFields["Enter Display Name"]
+        enterDisplayNameTextField.tap()
+        enterDisplayNameTextField.typeText("Tester")
+        
+        let enterPasswordSecureTextField = app.secureTextFields["Enter Password"]
+        enterPasswordSecureTextField.tap()
+        enterPasswordSecureTextField.typeText("Password")
+        
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
+        
+        let createAccountButton = app.buttons["Create Account"]
+        createAccountButton.tap()
+        
+        let elementsQuery = app.alerts["Error"].scrollViews.otherElements
+        elementsQuery.buttons["OK"].tap()
+    }
+    
+    func testSignUp_Success() throws {
+        let app = SocialLiteUITests.app
+        app.launch()
+        
+        let signUpButton = app.buttons["Sign Up"]
+        signUpButton.tap()
+        
+        let enterEmailAddressTextField = app.textFields["Enter Email Address"]
+        enterEmailAddressTextField.tap()
+        enterEmailAddressTextField.typeText("Test@test.com")
+        
+        let enterDisplayNameTextField = app.textFields["Enter Display Name"]
+        enterDisplayNameTextField.tap()
+        enterDisplayNameTextField.typeText("Tester")
+        
+        let enterPasswordSecureTextField = app.secureTextFields["Enter Password"]
+        enterPasswordSecureTextField.tap()
+        enterPasswordSecureTextField.typeText("Password")
+        
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
+        
+        let createAccountButton = app.buttons["Create Account"]
+        createAccountButton.tap()
+        
+        app.navigationBars["Timeline"].buttons["Logout"].tap()
+    }
+    
+    func testTimeLine_DeletePost() throws {
+        let app = SocialLiteUITests.app
+        app.launch()
+        
+        let emailAddressTextField = app.textFields["Email Address"]
+        emailAddressTextField.tap()
+        emailAddressTextField.typeText("DemoUser@toremove.com")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("MockupPassword")
+        
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
+        
+        let signInButton = app.buttons["Sign In"]
+        signInButton.tap()
+        
+        let ellipsisButton = app.scrollViews.otherElements.containing(.activityIndicator, identifier:"Progress halted").children(matching: .other).element.children(matching: .button).matching(identifier: "ellipsis").element(boundBy: 0)
+        ellipsisButton.tap()
+        let removeThisPostButton = app.sheets["Post Options"].scrollViews.otherElements.buttons["Remove this post"]
+        removeThisPostButton.tap()
+        ellipsisButton.tap()
+        removeThisPostButton.tap()
+    }
+    
+    func testTimeLine_LoadMore() throws {
+        let app = SocialLiteUITests.app
+        app.launch()
+        
+        let emailAddressTextField = app.textFields["Email Address"]
+        emailAddressTextField.tap()
+        emailAddressTextField.typeText("DemoUser@toremove.com")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("MockupPassword")
+        
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
+        
+        let signInButton = app.buttons["Sign In"]
+        signInButton.tap()
+        
+        let scrollViewsQuery = app.scrollViews
+        let element = scrollViewsQuery.otherElements.containing(.activityIndicator, identifier:"Progress halted").children(matching: .other).element
+        element.swipeUp()
+        element.swipeUp()
+        
+        let loadMoreButton = scrollViewsQuery.otherElements.buttons["Load More ..."]
+        loadMoreButton.tap()
+        
+        element.swipeUp()
+    }
+    
+    func testUserTimeLine_LoadMore() throws {
+        let app = SocialLiteUITests.app
+        app.launch()
+        
+        let emailAddressTextField = app.textFields["Email Address"]
+        emailAddressTextField.tap()
+        emailAddressTextField.typeText("DemoUser@toremove.com")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("MockupPassword")
+        
+        let returnButton = app.buttons["Return"]
+        returnButton.tap()
+        
+        let signInButton = app.buttons["Sign In"]
+        signInButton.tap()
+        
+        let scrollViewsQuery = app.scrollViews
+        let element = scrollViewsQuery.otherElements.containing(.activityIndicator, identifier:"Progress halted").children(matching: .other).element
+        element.children(matching: .button).matching(identifier: "DemoUser@toremove.com, DemoUser@toremove.com").firstMatch.tap()
+        
+        element.swipeUp()
+        element.swipeUp()
+        
+        let loadMoreButton = scrollViewsQuery.otherElements.buttons["Load More ..."]
+        loadMoreButton.tap()
+        
+        app.navigationBars["DemoUser@toremove.com"].buttons["Timeline"].tap()
     }
 }

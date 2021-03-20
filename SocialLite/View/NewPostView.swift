@@ -28,8 +28,12 @@ struct NewPostView: View {
                     Spacer()
                     
                     Button("Post") {
-                        // TODO: implement this
                         // Create new post action
+                        if let userID = self.appState.currentUserID {
+                            self.appState.dbManager?.createPost(self.postText, userID: userID)
+                        }
+                        // Dismiss this view
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                     .font(.headline)
                     .foregroundColor(.blue)
@@ -43,7 +47,6 @@ struct NewPostView: View {
                 TextEditor(text: self.$postText)
                     .cornerRadius(10.0)
                     .font(.body)
-                    .aspectRatio(contentMode: .fit)
                     .padding()
                 
                 Spacer()
@@ -56,14 +59,20 @@ struct NewPostView: View {
 
 struct NewPostView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPostView()
-            .previewDevice("iPhone 12 Pro Max")
-            .preferredColorScheme(.light)
-        NewPostView()
-            .previewDevice("iPhone 12 Pro Max")
-            .preferredColorScheme(.dark)
-        NewPostView()
-            .previewDevice("iPhone SE (2nd generation)")
-            .preferredColorScheme(.light)
+        let appState = AppState()
+        let auth = DummyAuthManager()
+        auth.config()
+        let db = DummyDBManager()
+        db.config()
+        appState.config(auth: auth, db: db)
+        
+        return Group {
+            NewPostView()
+                .environmentObject(appState)
+                .preferredColorScheme(.light)
+            NewPostView()
+                .environmentObject(appState)
+                .preferredColorScheme(.dark)
+        }
     }
 }

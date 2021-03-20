@@ -27,35 +27,33 @@ struct TimelineView: View {
     }
     
     var body: some View {
-        GeometryReader { georeader in
-            ZStack {
-                ScrollView {
+        
+        let hasError: Binding<Bool> = Binding<Bool> { () -> Bool in
+            return (self.appState.itemCreatedError != nil)
+                || (self.appState.itemFetchError != nil)
+                || (self.appState.itemsFetchError != nil)
+                || (self.appState.itemRemovedError != nil)
+        } set: { (visible) in
+            if !visible {
+                self.appState.itemCreatedError = nil
+                self.appState.itemFetchError = nil
+                self.appState.itemsFetchError = nil
+                self.appState.itemRemovedError = nil
+            }
+        }
+        
+        return GeometryReader { georeader in
+            RefreshableScrollView { (completion) in
+                // Reload items
+                self.appState.dbManager?.fetchPosts(startAfter: nil)
+                completion()
+            } content: {
+                VStack {
                     LazyVStack {
-                        ForEach(0..<10, id: \.self) { i in
-                            VStack (alignment: .leading) {
-                                NavigationLink(
-                                    destination: UserPostsView().environmentObject(self.appState),
-                                    label: {
-                                        HStack {
-                                            Image(systemName: "person.crop.circle")
-                                                .font(.largeTitle)
-                                            VStack (alignment: .leading) {
-                                                Text("Display Name")
-                                                    .font(.subheadline)
-                                                Text("Email")
-                                                    .font(.caption)
-                                            }
-                                            Spacer()
-                                        }
-                                    })
-                                    .buttonStyle(PlainButtonStyle())
-                                Text("Post Detail")
-                                    .font(.body)
-                                    .padding(.vertical)
-                                Text("Time")
-                                    .font(.footnote)
-                            }
-                            .padding()
+                        ForEach(0..<self.appState.items.count, id: \.self) { i in
+                            // Item cell
+                            ItemCell(item: self.appState.items[i]).environmentObject(self.appState)
+                                .padding()
                             
                             Divider()
                                 .background(Color("DividerColor"))
@@ -64,54 +62,46 @@ struct TimelineView: View {
                     }
                     .padding(.bottom)
                     
-                    Button(action: {
-                        // TODO: implement this
-                        // Load More action
-                    }, label: {
-                        Text("Load More ...")
-                            .font(.footnote)
-                    })
-                    .buttonStyle(PlainButtonStyle())
-                    .padding(.bottom, georeader.safeAreaInsets.bottom + 10)
+                    if self.appState.hasMorePost {
+                        Button(action: {
+                            // Consume more state
+                            self.appState.hasMorePost = false
+                            // Load more items
+                            if let lastItem = self.appState.items.last {
+                                self.appState.dbManager?.fetchPosts(startAfter: lastItem)
+                            }
+                        }, label: {
+                            Text("Load More ...")
+                                .font(.footnote)
+                        })
+                        .buttonStyle(PlainButtonStyle())
+                        .padding(.bottom, georeader.safeAreaInsets.bottom + 10)
+                    }
                 }
-                .background(Color("BGColor"))
-                .edgesIgnoringSafeArea(.bottom)
-                .navigationBarTitle(Text("Timeline"), displayMode: .inline)
-                .navigationBarItems(leading: Button(action: {
-                    self.appState.currentUserID = nil
-                }, label: {
-                    Text("Logout")
-                        .font(.headline)
-                }), trailing: Button(action: {
-                    self.showNewPost.toggle()
-                }, label: {
-                    Image(systemName: "rectangle.badge.plus")
-                        .font(.title)
-                }))
-                .sheet(isPresented: self.$showNewPost, onDismiss: {
-                    self.showNewPost = false
-                }) {
-                    NewPostView().environmentObject(self.appState)
-                }
-                
-                VStack {
-                    Button(action: {
-                        // TODO: implement this
-                        // Reload action
-                    }, label: {
-                        Text("New Post, Tap to reload")
-                    })
+            }
+            .background(Color("BGColor"))
+            .edgesIgnoringSafeArea(.bottom)
+            .navigationBarTitle(Text("Timeline"), displayMode: .inline)
+            .navigationBarItems(leading: Button(action: {
+                self.appState.currentUserID = nil
+            }, label: {
+                Text("Logout")
                     .font(.headline)
-                    .foregroundColor(.blue)
-                    .padding()
-                    .buttonStyle(DefaultButtonStyle())
-                    .background(Color.init(white: 0.9))
-                    .cornerRadius(30.0)
-                    .padding(.vertical)
-                    .opacity(0.8)
-                    
-                    Spacer()
-                }
+            }), trailing: Button(action: {
+                self.showNewPost.toggle()
+            }, label: {
+                Image(systemName: "rectangle.badge.plus")
+                    .font(.title)
+            }))
+            .sheet(isPresented: self.$showNewPost, onDismiss: {
+                self.showNewPost = false
+            }) {
+                NewPostView().environmentObject(self.appState)
+            }
+            .alert(isPresented: hasError) {
+                // There is an error, show error message (if no message, show default error message)
+                Alert(title: Text("Error"),
+                      message: Text("\(self.appState.itemCreatedError?.localizedDescription ?? self.appState.itemFetchError?.localizedDescription ?? self.appState.itemsFetchError?.localizedDescription ?? self.appState.itemRemovedError?.localizedDescription ?? "Something worng, please try again!")"), dismissButton: .default(Text("OK")))
             }
         }
     }
@@ -120,23 +110,23 @@ struct TimelineView: View {
 struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
         let appState = AppState()
+        let auth = DummyAuthManager()
+        auth.config()
+        let db = DummyDBManager()
+        db.config()
+        appState.config(auth: auth, db: db)
         
-        NavigationView {
-            TimelineView()
-                .environmentObject(appState)
-                .previewDevice("iPhone 12 Pro Max")
-                .preferredColorScheme(.light)
-        }
-        NavigationView {
-            TimelineView()
-                .environmentObject(appState)
-                .previewDevice("iPhone 12 Pro Max")
-                .preferredColorScheme(.dark)
-        }
-        NavigationView {
-            TimelineView()
-                .environmentObject(appState)
-                .previewDevice("iPhone SE (2nd generation)")
+        return Group {
+            NavigationView {
+                TimelineView()
+                    .environmentObject(appState)
+                    .preferredColorScheme(.light)
+            }
+            NavigationView {
+                TimelineView()
+                    .environmentObject(appState)
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }

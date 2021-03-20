@@ -10,10 +10,24 @@
 		75C3D6B9B25161EE8584AE6C /* Pods_SocialLite_Dev_SocialLiteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B33D2D34F3A8A3F16D947 /* Pods_SocialLite_Dev_SocialLiteUITests.framework */; };
 		A19963D9C85B523CB9AEEA48 /* Pods_SocialLite_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE966767014D2BBD224B0B25 /* Pods_SocialLite_Dev.framework */; };
 		A82A8CE483E190E34F6756CA /* Pods_SocialLite_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C64F9510E4104B7A4FB6FF /* Pods_SocialLite_Production.framework */; };
+		B30C1A3F2605DDCE00137BD9 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C1A3E2605DDCE00137BD9 /* ItemCell.swift */; };
+		B30C1A402605DDCE00137BD9 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C1A3E2605DDCE00137BD9 /* ItemCell.swift */; };
+		B30C1A522605F34800137BD9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B30C1A512605F34800137BD9 /* README.md */; };
+		B30C1A532605F34800137BD9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B30C1A512605F34800137BD9 /* README.md */; };
 		B33FCD2525FF927000F661A5 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2425FF927000F661A5 /* NewPostView.swift */; };
 		B33FCD2625FF927000F661A5 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2425FF927000F661A5 /* NewPostView.swift */; };
 		B33FCD2C25FF929100F661A5 /* UserPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2B25FF929100F661A5 /* UserPostsView.swift */; };
 		B33FCD2D25FF929100F661A5 /* UserPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FCD2B25FF929100F661A5 /* UserPostsView.swift */; };
+		B342D2362601F3370024BAC0 /* UserInfoCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B342D2352601F3370024BAC0 /* UserInfoCellHeader.swift */; };
+		B342D2372601F3370024BAC0 /* UserInfoCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B342D2352601F3370024BAC0 /* UserInfoCellHeader.swift */; };
+		B342D24226022D2D0024BAC0 /* Date+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B342D24126022D2D0024BAC0 /* Date+Util.swift */; };
+		B342D24326022D2D0024BAC0 /* Date+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B342D24126022D2D0024BAC0 /* Date+Util.swift */; };
+		B394242A2604A6520065EBFF /* DummyAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39424292604A6520065EBFF /* DummyAuthManager.swift */; };
+		B39424342604ABF40065EBFF /* DummyDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39424332604ABF40065EBFF /* DummyDBManager.swift */; };
+		B39424392604B7FB0065EBFF /* DummyAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39424292604A6520065EBFF /* DummyAuthManager.swift */; };
+		B394243A2604B7FB0065EBFF /* DummyDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39424332604ABF40065EBFF /* DummyDBManager.swift */; };
+		B39C144F260341B8006CD2DF /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C144E260341B8006CD2DF /* RefreshableScrollView.swift */; };
+		B39C1450260341B8006CD2DF /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C144E260341B8006CD2DF /* RefreshableScrollView.swift */; };
 		B3BF9AFC25FE557D00C776D2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9AFB25FE557D00C776D2 /* AppState.swift */; };
 		B3BF9AFD25FE557D00C776D2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9AFB25FE557D00C776D2 /* AppState.swift */; };
 		B3BF9B0325FE55C400C776D2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BF9B0225FE55C400C776D2 /* RootView.swift */; };
@@ -62,6 +76,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B3EC6E752604996E002E4FA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3ED63B125FDF4E70028E5F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3ED63EF25FDF5300028E5F6;
+			remoteInfo = SocialLite_Production;
+		};
 		B3ED63D025FDF4E80028E5F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3ED63B125FDF4E70028E5F6 /* Project object */;
@@ -88,10 +109,17 @@
 		8B402ED7029B4FCF77707583 /* Pods_SocialLiteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLiteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		942B33D2D34F3A8A3F16D947 /* Pods_SocialLite_Dev_SocialLiteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLite_Dev_SocialLiteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04BB746D73E8016E5D3A22F /* Pods-SocialLiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLiteTests.debug.xcconfig"; path = "Target Support Files/Pods-SocialLiteTests/Pods-SocialLiteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B30C1A3E2605DDCE00137BD9 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		B30C1A512605F34800137BD9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B33FCD2425FF927000F661A5 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		B33FCD2B25FF929100F661A5 /* UserPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsView.swift; sourceTree = "<group>"; };
 		B33FCD4B25FF96DB00F661A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33FCD5125FF96E900F661A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B342D2352601F3370024BAC0 /* UserInfoCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCellHeader.swift; sourceTree = "<group>"; };
+		B342D24126022D2D0024BAC0 /* Date+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Util.swift"; sourceTree = "<group>"; };
+		B39424292604A6520065EBFF /* DummyAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAuthManager.swift; sourceTree = "<group>"; };
+		B39424332604ABF40065EBFF /* DummyDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDBManager.swift; sourceTree = "<group>"; };
+		B39C144E260341B8006CD2DF /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		B3BF9AFB25FE557D00C776D2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B3BF9B0225FE55C400C776D2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B3BF9B0925FE55D600C776D2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -179,9 +207,37 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B30C1A582605F71400137BD9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B30C1A3E2605DDCE00137BD9 /* ItemCell.swift */,
+				B39C144E260341B8006CD2DF /* RefreshableScrollView.swift */,
+				B342D2352601F3370024BAC0 /* UserInfoCellHeader.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B342D24026022D120024BAC0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B342D24126022D2D0024BAC0 /* Date+Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		B39424282604A63A0065EBFF /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				B39424292604A6520065EBFF /* DummyAuthManager.swift */,
+				B39424332604ABF40065EBFF /* DummyDBManager.swift */,
+			);
+			path = Dummy;
+			sourceTree = "<group>";
+		};
 		B3ED63B025FDF4E70028E5F6 = {
 			isa = PBXGroup;
 			children = (
+				B30C1A512605F34800137BD9 /* README.md */,
 				B3ED63BB25FDF4E70028E5F6 /* SocialLite */,
 				B3ED63D225FDF4E80028E5F6 /* SocialLiteTests */,
 				B3ED63DD25FDF4E80028E5F6 /* SocialLiteUITests */,
@@ -209,6 +265,7 @@
 				B3ED640725FDF56B0028E5F6 /* config_production */,
 				B3ED644825FDFA430028E5F6 /* Model */,
 				B3ED644A25FDFA510028E5F6 /* Service */,
+				B342D24026022D120024BAC0 /* Util */,
 				B3ED644725FDFA3B0028E5F6 /* View */,
 				B3ED644925FDFA4A0028E5F6 /* ViewModel */,
 				B3ED63BC25FDF4E70028E5F6 /* AppDelegate.swift */,
@@ -270,6 +327,7 @@
 		B3ED644725FDFA3B0028E5F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B30C1A582605F71400137BD9 /* Common */,
 				B3BF9B0925FE55D600C776D2 /* LoginView.swift */,
 				B33FCD2425FF927000F661A5 /* NewPostView.swift */,
 				B3BF9B0225FE55C400C776D2 /* RootView.swift */,
@@ -303,6 +361,7 @@
 			children = (
 				B3ED647425FE11080028E5F6 /* AuthProtocol.swift */,
 				B3ED648325FE12EB0028E5F6 /* DBProtocol.swift */,
+				B39424282604A63A0065EBFF /* Dummy */,
 				B3ED647B25FE12100028E5F6 /* Firebase */,
 			);
 			path = Service;
@@ -392,6 +451,7 @@
 			);
 			dependencies = (
 				B3ED63DC25FDF4E80028E5F6 /* PBXTargetDependency */,
+				B3EC6E762604996E002E4FA7 /* PBXTargetDependency */,
 			);
 			name = SocialLiteUITests;
 			productName = SocialLiteUITests;
@@ -467,6 +527,7 @@
 			files = (
 				B3ED63C925FDF4E80028E5F6 /* LaunchScreen.storyboard in Resources */,
 				B3ED643C25FDF94E0028E5F6 /* GoogleService-Info.plist in Resources */,
+				B30C1A522605F34800137BD9 /* README.md in Resources */,
 				B3ED63C625FDF4E80028E5F6 /* Preview Assets.xcassets in Resources */,
 				B3ED63C325FDF4E80028E5F6 /* Assets.xcassets in Resources */,
 			);
@@ -492,6 +553,7 @@
 			files = (
 				B3ED63F625FDF5300028E5F6 /* LaunchScreen.storyboard in Resources */,
 				B3ED644225FDF9580028E5F6 /* GoogleService-Info.plist in Resources */,
+				B30C1A532605F34800137BD9 /* README.md in Resources */,
 				B3ED63F725FDF5300028E5F6 /* Preview Assets.xcassets in Resources */,
 				B3ED63F825FDF5300028E5F6 /* Assets.xcassets in Resources */,
 			);
@@ -647,21 +709,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ED644C25FDFBD70028E5F6 /* User.swift in Sources */,
+				B342D24226022D2D0024BAC0 /* Date+Util.swift in Sources */,
 				B3ED648425FE12EB0028E5F6 /* DBProtocol.swift in Sources */,
 				B3ED647525FE11080028E5F6 /* AuthProtocol.swift in Sources */,
 				B3BF9AFC25FE557D00C776D2 /* AppState.swift in Sources */,
+				B39C144F260341B8006CD2DF /* RefreshableScrollView.swift in Sources */,
 				B3ED63BD25FDF4E70028E5F6 /* AppDelegate.swift in Sources */,
 				B33FCD2C25FF929100F661A5 /* UserPostsView.swift in Sources */,
+				B30C1A3F2605DDCE00137BD9 /* ItemCell.swift in Sources */,
+				B394242A2604A6520065EBFF /* DummyAuthManager.swift in Sources */,
 				B3ED647D25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */,
 				B3ED63BF25FDF4E70028E5F6 /* SceneDelegate.swift in Sources */,
 				B3ED646625FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
 				B3BF9B0A25FE55D600C776D2 /* LoginView.swift in Sources */,
 				B3ED645F25FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
+				B39424342604ABF40065EBFF /* DummyDBManager.swift in Sources */,
 				B3BF9B0325FE55C400C776D2 /* RootView.swift in Sources */,
 				B3ED63C125FDF4E70028E5F6 /* ContentView.swift in Sources */,
 				B3BF9B1825FE578200C776D2 /* SignUpView.swift in Sources */,
 				B33FCD2525FF927000F661A5 /* NewPostView.swift in Sources */,
 				B3ED645725FDFD4E0028E5F6 /* Post.swift in Sources */,
+				B342D2362601F3370024BAC0 /* UserInfoCellHeader.swift in Sources */,
 				B3BF9B1125FE55EB00C776D2 /* TimelineView.swift in Sources */,
 				B3ED648B25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */,
 			);
@@ -690,21 +758,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ED644D25FDFBD70028E5F6 /* User.swift in Sources */,
+				B342D24326022D2D0024BAC0 /* Date+Util.swift in Sources */,
 				B3ED648525FE12EB0028E5F6 /* DBProtocol.swift in Sources */,
 				B3ED647625FE11080028E5F6 /* AuthProtocol.swift in Sources */,
 				B3BF9AFD25FE557D00C776D2 /* AppState.swift in Sources */,
+				B39C1450260341B8006CD2DF /* RefreshableScrollView.swift in Sources */,
 				B3ED63F125FDF5300028E5F6 /* AppDelegate.swift in Sources */,
 				B33FCD2D25FF929100F661A5 /* UserPostsView.swift in Sources */,
+				B30C1A402605DDCE00137BD9 /* ItemCell.swift in Sources */,
+				B39424392604B7FB0065EBFF /* DummyAuthManager.swift in Sources */,
 				B3ED647E25FE121C0028E5F6 /* FirebaseAuthManager.swift in Sources */,
 				B3ED63F225FDF5300028E5F6 /* SceneDelegate.swift in Sources */,
 				B3ED646725FDFEB40028E5F6 /* Post+Firebase.swift in Sources */,
 				B3BF9B0B25FE55D600C776D2 /* LoginView.swift in Sources */,
 				B3ED646025FDFDF90028E5F6 /* User+Firebase.swift in Sources */,
+				B394243A2604B7FB0065EBFF /* DummyDBManager.swift in Sources */,
 				B3BF9B0425FE55C400C776D2 /* RootView.swift in Sources */,
 				B3ED63F325FDF5300028E5F6 /* ContentView.swift in Sources */,
 				B3BF9B1925FE578200C776D2 /* SignUpView.swift in Sources */,
 				B33FCD2625FF927000F661A5 /* NewPostView.swift in Sources */,
 				B3ED645825FDFD4E0028E5F6 /* Post.swift in Sources */,
+				B342D2372601F3370024BAC0 /* UserInfoCellHeader.swift in Sources */,
 				B3BF9B1225FE55EB00C776D2 /* TimelineView.swift in Sources */,
 				B3ED648C25FE130D0028E5F6 /* FirebaseDBManager.swift in Sources */,
 			);
@@ -713,6 +787,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B3EC6E762604996E002E4FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3ED63EF25FDF5300028E5F6 /* SocialLite_Production */;
+			targetProxy = B3EC6E752604996E002E4FA7 /* PBXContainerItemProxy */;
+		};
 		B3ED63D125FDF4E80028E5F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3ED63B825FDF4E70028E5F6 /* SocialLite_Dev */;
@@ -868,7 +947,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -892,7 +971,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -961,7 +1040,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SocialLite;
+				TEST_TARGET_NAME = SocialLite_Dev;
 			};
 			name = Debug;
 		};
@@ -981,7 +1060,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SocialLite;
+				TEST_TARGET_NAME = SocialLite_Dev;
 			};
 			name = Release;
 		};
@@ -1000,6 +1079,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1023,6 +1103,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pc.sociallite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
