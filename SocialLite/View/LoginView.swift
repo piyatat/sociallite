@@ -15,6 +15,11 @@ struct LoginView: View {
     @State var email = ""
     @State var password = ""
     
+    // For dismiss keyboard
+    private func endEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
     var body: some View {
         
         let hasError: Binding<Bool> = Binding<Bool> { () -> Bool in
@@ -37,18 +42,22 @@ struct LoginView: View {
                 HStack {
                     Text("Email")
                         .font(.headline)
-                    TextField("Enter Email Address", text: self.$email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.body)
+                    TextField("Email Address", text: self.$email, onCommit: {
+                        self.endEditing()
+                    })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.body)
                 }
                 .padding(.horizontal)
                 
                 HStack {
                     Text("Password")
                         .font(.headline)
-                    SecureField("Enter Password", text: self.$password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.body)
+                    SecureField("Password", text: self.$password, onCommit: {
+                        self.endEditing()
+                    })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.body)
                 }
                 .padding(.horizontal)
                 
@@ -95,15 +104,15 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
+        let appState = AppState()
+        
         Group {
             LoginView()
-                .previewDevice("iPhone 12 Pro Max")
+                .environmentObject(appState)
                 .preferredColorScheme(.light)
             LoginView()
-                .previewDevice("iPhone 12 Pro Max")
+                .environmentObject(appState)
                 .preferredColorScheme(.dark)
-            LoginView()
-                .previewDevice("iPhone SE (2nd generation)")
         }
     }
 }

@@ -16,6 +16,11 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var displayName = ""
     
+    // For dismiss keyboard
+    private func endEditing() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
     var body: some View {
         
         let hasError: Binding<Bool> = Binding<Bool> { () -> Bool in
@@ -44,31 +49,37 @@ struct SignUpView: View {
                 HStack {
                     Text("Email")
                         .font(.headline)
-                    TextField("Enter Email Address", text: self.$email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.body)
+                    TextField("Enter Email Address", text: self.$email, onCommit:  {
+                        self.endEditing()
+                    })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.body)
                 }
                 .padding()
                 
                 HStack {
                     Text("Display Name")
                         .font(.headline)
-                    TextField("Enter Display Name", text: self.$displayName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.body)
+                    TextField("Enter Display Name", text: self.$displayName, onCommit:  {
+                        self.endEditing()
+                    })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.body)
                 }
                 .padding()
                 
                 HStack {
                     Text("Password")
                         .font(.headline)
-                    SecureField("Enter Password", text: self.$password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.body)
+                    SecureField("Enter Password", text: self.$password, onCommit: {
+                        self.endEditing()
+                    })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.body)
                 }
                 .padding()
                 
-                Button("Sign Up") {
+                Button("Create Account") {
                     // Sign Up Action
                     self.appState.authManager?.signUp(email: self.email, password: self.password, displayName: self.displayName)
                 }
@@ -94,16 +105,15 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
+        let appState = AppState()
+        
         Group {
             SignUpView()
-                .previewDevice("iPhone 12 Pro Max")
+                .environmentObject(appState)
                 .preferredColorScheme(.light)
             SignUpView()
-                .previewDevice("iPhone 12 Pro Max")
+                .environmentObject(appState)
                 .preferredColorScheme(.dark)
-            SignUpView()
-                .previewDevice("iPhone SE (2nd generation)")
-                .preferredColorScheme(.light)
         }
     }
 }
