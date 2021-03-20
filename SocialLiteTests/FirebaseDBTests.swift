@@ -10,12 +10,16 @@ import XCTest
 
 class FirebaseDBTests: XCTestCase {
 
+    // ******************************
+    // TODO: Change these info before running the test
+    // ******************************
     // Chagne this to the actual email/password for testing
     static let testEmail = "DemoUser@toremove.com"
     static let testPassword = "MockupPassword"
     // Change this to the actual ID (key) for testing fetch
-    static let userID = "ku9QBQD2ENYnyV1ffTcHsRSmaf82"
-    static let postID = "lZ9cZuvgG1fjN91ExnQDKJq0Ua93_637743158"
+    // userID should be user with post (for testing fetching user's post)
+    static let userID = "lZ9cZuvgG1fjN91ExnQDKJq0Ua93"
+    static let postID = "lZ9cZuvgG1fjN91ExnQDKJq0Ua93_637748726"
     
     static let authManager = FirebaseAuthManager()
     static let dbManager = FirebaseDBManager()
