@@ -16,14 +16,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
-        // Create the SwiftUI view that provides the window contents.
+        
+        
+        let appState = AppState()
+        
+        #if DEBUG
+        
+        if ProcessInfo.processInfo.arguments.contains("UITesting") {
+            // UI Testing
+            debugPrint("UI Testing ...")
+            // Config app with mockup object
+            let auth = DummyAuthManager()
+            auth.config()
+            let db = DummyDBManager()
+            db.config()
+            appState.config(auth: auth, db: db)
+        } else if ProcessInfo.processInfo.arguments.contains("TestingMode") {
+            // Unit Testing
+            debugPrint("Unit Testing ...")
+            // Do not launch main view, since it may affect the unit test
+            return
+        } else {
+            let auth = FirebaseAuthManager()
+            auth.config()
+            let db = FirebaseDBManager()
+            db.config()
+            appState.config(auth: auth, db: db)
+        }
+        
+        #else
+        
         let auth = FirebaseAuthManager()
         auth.config()
         let db = FirebaseDBManager()
         db.config()
-        let appState = AppState()
         appState.config(auth: auth, db: db)
+        
+        #endif
+
+
+        // Create the SwiftUI view that provides the window contents.
         let rootView = RootView().environmentObject(appState)
 
         // Use a UIHostingController as window root view controller.
