@@ -13,11 +13,11 @@ protocol DBManagerDelegate {
     // Single item fetch
     func onItemFetchCompleted(item: Post?, error: Error?)
     // Multiple items fetch (start after specified post, nil for start from the beginning)
-    func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?, error: Error?)
+    func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?, hasMore: Bool, error: Error?)
     // Item is removed from DB (only call on remove request from the current session)
     func onItemRemoved(removedItem: Post?, error: Error?)
     // Multiple user's items fetch (start after specified post, nil for start from the beginning)
-    func onUserItemsFetchCompleted(userID: String, items: [Post], startAfter offsetItem: Post?, error: Error?)
+    func onUserItemsFetchCompleted(userID: String, items: [Post], startAfter offsetItem: Post?, hasMore: Bool, error: Error?)
     
     // User Info fetch
     func onUserFetchCompleted(user: User?, error: Error?)
