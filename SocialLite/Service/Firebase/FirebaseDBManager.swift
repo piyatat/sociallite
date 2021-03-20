@@ -54,8 +54,15 @@ class FirebaseDBManager: DBManagerProtocol {
         ref?.observe(.childAdded, with: { (snapshot) in
             // Parse items, there should be only 1 item
             let items = Post.Load(snapshot: snapshot)
-            // Notify delegate
-            self.delegate?.onItemCreated(item: items.first, error: nil)
+            if let item = items.first {
+                // Check whether this is newly created or not (should be create within N seconds from now)
+                // Use 5 seconds as limit
+                if Int(Date.timeIntervalSinceReferenceDate) - item.time < 5 {
+                    // Newly created item
+                    // Notify delegate
+                    self.delegate?.onItemCreated(item: items.first, error: nil)
+                }
+            }
         }, withCancel: { (error) in
             debugPrint("Error: \(error.localizedDescription)")
             // Notify delegate
