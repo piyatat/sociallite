@@ -10,6 +10,9 @@ import XCTest
 
 class FirebaseAuthTests: XCTestCase {
     
+    // ******************************
+    // TODO: Change these info before running the test
+    // ******************************
     // Chagne this to the actual email/password for testing
     static let testEmail = "DemoUser@toremove.com"
     static let testPassword = "MockupPassword"
@@ -36,8 +39,8 @@ class FirebaseAuthTests: XCTestCase {
     // MARK: - SignUp Function
     // SignUp with email & password
     func testSignUp_CompleteData_Success() throws {
-        let email = "UT_\(Int(Date.timeIntervalSinceReferenceDate))@toremove.com"
-        let password = "UT_Password"
+        let email = "ToRemove_\(Int(Date.timeIntervalSinceReferenceDate))@toremove.com"
+        let password = "ToRemove_Password"
         let displayName = "Unit Tester"
 
         let expectation = XCTestExpectation()
@@ -77,7 +80,7 @@ class FirebaseAuthTests: XCTestCase {
     // SignUp with email, but no password
     func testSignUp_NoPassword_Fail() throws {
         // to prevent the same email as other test case
-        let email = "UT_\(Int(Date.timeIntervalSinceReferenceDate))@toremove.com"
+        let email = "ToRemove_\(Int(Date.timeIntervalSinceReferenceDate))@toremove.com"
         let displayName = "Unit Tester"
 
         let expectation = XCTestExpectation()
