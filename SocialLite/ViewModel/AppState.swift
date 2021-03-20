@@ -134,15 +134,10 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
         self.itemFetchError = error
     }
     // Multiple items fetch (start after specified post, nil for start from the beginning)
-    func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?, error: Error?) {
+    func onItemsFetchCompleted(items: [Post], startAfter offsetItem: Post?, hasMore: Bool, error: Error?) {
         // Update first fetch flag
         self.isFirstFetchDone = true
-        if items.count > 0 {
-            // if there is item in the list, it is possible to have more
-            self.hasMorePost = true
-        } else {
-            self.hasMorePost = false
-        }
+        self.hasMorePost = hasMore
         if let _ = offsetItem {
             // Fetch more items, append items to the list
             self.items += items
@@ -180,13 +175,8 @@ class AppState: ObservableObject, AuthManagerDelegate, DBManagerDelegate {
         self.itemRemovedError = error
     }
     // Multiple user's items fetch (start after specified post, nil for start from the beginning)
-    func onUserItemsFetchCompleted(userID: String, items: [Post], startAfter offsetItem: Post?, error: Error?) {
-        if items.count > 0 {
-            // if there is item in the list, it is possible to have more
-            self.hasMoreUserPost = true
-        } else {
-            self.hasMoreUserPost = false
-        }
+    func onUserItemsFetchCompleted(userID: String, items: [Post], startAfter offsetItem: Post?, hasMore: Bool, error: Error?) {
+        self.hasMoreUserPost = hasMore
         if let _ = offsetItem {
             // Fetch more items, append items to the list
             if let currentItems = self.userItems[userID] {
