@@ -3,34 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>979489176202-pl22s49u7rshtkbfdb06v2a0v2i16cds.apps.googleusercontent.com</string>
+	<string></string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.979489176202-pl22s49u7rshtkbfdb06v2a0v2i16cds</string>
+	<string></string>
 	<key>API_KEY</key>
-	<string>AIzaSyC9q_RP_j5KhXiYRkOauMavArSK8VpguG0</string>
+	<string></string>
 	<key>GCM_SENDER_ID</key>
-	<string>979489176202</string>
+	<string></string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.pc.sociallite.dev</string>
 	<key>PROJECT_ID</key>
-	<string>sociallite-469bd</string>
+	<string></string>
 	<key>STORAGE_BUCKET</key>
-	<string>sociallite-469bd.appspot.com</string>
+	<string></string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:979489176202:ios:a06e797b68075a5cbd0b73</string>
+	<string></string>
 	<key>DATABASE_URL</key>
-	<string>https://sociallite-469bd-default-rtdb.firebaseio.com</string>
+	<string></string>
 </dict>
 </plist>

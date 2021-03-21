@@ -20,8 +20,7 @@ A simple social media app build with SwiftUI + Firebase service.
 git clone https://github.com/piyatat/sociallite
 ```
 
-2. There are 2 targets: 1 for dev, and another for production
-Change BundleID of both target
+2. There are 2 targets: 1 for dev, and another for production. Change BundleID of both target
 
 3. Setup Firebase Project (Ideally 2 projects: 1 for dev target, 1 for production target)
 - Enable Authentication with Email & Password
