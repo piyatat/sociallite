@@ -58,12 +58,12 @@ struct UserPostsView: View {
                                     }
                                     
                                     // Content
-                                    Text("\(self.appState.items[i].text)")
+                                    Text("\(items[i].text)")
                                         .font(.body)
                                         .padding(.vertical)
                                     
                                     // Footer
-                                    Text("\(Date.stringFromTimeInterval(TimeInterval(self.appState.items[i].time)))")
+                                    Text("\(Date.stringFromTimeInterval(TimeInterval(items[i].time)))")
                                         .font(.footnote)
                                 }
                                 .padding()
@@ -86,7 +86,8 @@ struct UserPostsView: View {
                             self.appState.hasMoreUserPost = false
                             // Load more items
                             if let userID = self.appState.selectedUserID,
-                               let lastItem = self.appState.items.last
+                               let items = self.appState.userItems[userID],
+                               let lastItem = items.last
                             {
                                 self.appState.dbManager?.fetchUserPosts(for: userID, startAfter: lastItem)
                             }
