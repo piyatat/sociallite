@@ -19,7 +19,7 @@ class FirebaseDBTests: XCTestCase {
     // Change this to the actual ID (key) for testing fetch
     // userID should be user with post (for testing fetching user's post)
     static let userID = "lZ9cZuvgG1fjN91ExnQDKJq0Ua93"
-    static let postID = "lZ9cZuvgG1fjN91ExnQDKJq0Ua93_637748726"
+    static let postID = "lZ9cZuvgG1fjN91ExnQDKJq0Ua93_637943549"
     
     static let authManager = FirebaseAuthManager()
     static let dbManager = FirebaseDBManager()

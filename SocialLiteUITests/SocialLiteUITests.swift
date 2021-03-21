@@ -130,27 +130,27 @@ class SocialLiteUITests: XCTestCase {
     func testTimeLine_CreatePost() throws {
         let app = SocialLiteUITests.app
         app.launch()
-        
+
         let emailAddressTextField = app.textFields["Email Address"]
         emailAddressTextField.tap()
         emailAddressTextField.typeText("DemoUser@toremove.com")
-        
+
         let passwordSecureTextField = app.secureTextFields["Password"]
         passwordSecureTextField.tap()
         passwordSecureTextField.typeText("MockupPassword")
-        
+
         let returnButton = app.buttons["Return"]
         returnButton.tap()
-        
+
         let signInButton = app.buttons["Sign In"]
         signInButton.tap()
-        
+
         app.navigationBars["Timeline"].buttons["rectangle.badge.plus"].tap()
-        
+
         // There is no function to query TextEditor at the moment, have to query it with textViews instead
         let textView = app.textViews.firstMatch
         textView.tap()
-        
+
         // Cannot typeText() into textView at the moment
         // have to simulate typing each key in keyboard
         app.keys["T"].tap()
@@ -168,7 +168,7 @@ class SocialLiteUITests: XCTestCase {
         app.keys["t"].tap()
         app.buttons["Post"].tap()
     }
-    
+
     func testTimeLine_DeletePost() throws {
         let app = SocialLiteUITests.app
         app.launch()
@@ -244,13 +244,15 @@ class SocialLiteUITests: XCTestCase {
 
         let scrollViewsQuery = app.scrollViews
         let element = scrollViewsQuery.otherElements.containing(.activityIndicator, identifier:"Progress halted").children(matching: .other).element
-        element.children(matching: .button).matching(identifier: "DemoUser@toremove.com, DemoUser@toremove.com").firstMatch.tap()
+        element.children(matching: .staticText).matching(identifier: "DemoUser@toremove.com").element(boundBy: 0).tap()
 
         element.swipeUp()
         element.swipeUp()
 
-        let loadMoreButton = scrollViewsQuery.otherElements.buttons["Load More ..."]
+        let loadMoreButton = app.buttons["Load More ..."]
         loadMoreButton.tap()
+        
+        element.swipeUp()
 
         app.navigationBars["DemoUser@toremove.com"].buttons["Timeline"].tap()
     }
